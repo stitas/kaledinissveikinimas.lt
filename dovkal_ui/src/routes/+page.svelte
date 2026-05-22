@@ -2,6 +2,7 @@
 	import { Button } from 'flowbite-svelte';
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+	import GreetingInput from '$lib/components/GreetingInput.svelte';
 
 	let showTopBanner = $state(true);
 
@@ -69,7 +70,7 @@
 <main class="bg-white">
 	<section
 		aria-labelledby="hero-title"
-		class="mx-auto mt-24 flex min-h-screen max-w-496 flex-col justify-center px-6 py-16 xl:px-10 xl:mt-0"
+		class="mx-auto mt-24 flex min-h-screen max-w-496 flex-col justify-center px-6 py-16 xl:px-10 xl:mt-8"
 	>
 		<div class="grid items-center gap-16 xl:grid-cols-[minmax(0,52rem)_minmax(0,66rem)] xl:gap-28 2xl:gap-36">
 			<div class="mx-auto max-w-216 text-center xl:mx-0 xl:text-left">
@@ -125,7 +126,7 @@
 			</div>
 
 			<VideoPlayer 
-				posterSrc="/images/santa-video-preview.jpg"
+				posterSrc="/images/santa-classic-preview.jpg"
 				videoSrc="/videos/santa-demo.mp4"
 				posterAlt="Pavyzdinis personalizuotas Kalėdų Senelio video sveikinimas"
 				videoLabel="Pavyzdinis Kalėdų Senelio video sveikinimas"
@@ -136,7 +137,7 @@
 	
 		<a
             href="#sukurti-sveikinima"
-            class="mx-auto mt-8 flex items-center justify-center gap-3 text-5xl font-bold text-red transition hover:text-red-dark xl:mt-48 sm:gap-5"
+            class="mx-auto mt-8 flex items-center justify-center gap-3 text-5xl font-bold text-red transition hover:text-red-dark xl:mt-56 sm:gap-5"
             aria-label="Eiti į sveikinimo kūrimo formą"
         >
             <span>Sukurkite dabar!</span>
@@ -166,4 +167,13 @@
             </svg>
         </a>
 	</section>
+
+	<GreetingInput />
+	
+	<!-- Update home screen with video carousel of different santas -->
+	<!-- How it works -->
+	<!-- Pricing -->
+	<!-- Faq -->
+	<!-- Greeting input repeat -->
+	<!-- Footer -->
 </main>

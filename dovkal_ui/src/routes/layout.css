@@ -11,3 +11,7 @@
 	--color-red-light: #fee2e2;
 	--color-cream: #fff7ed;
 }
+
+html {
+	scroll-behavior: smooth;
+}
