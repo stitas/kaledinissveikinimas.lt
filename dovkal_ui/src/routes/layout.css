@@ -1,2 +1,13 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
+@plugin 'flowbite/plugin';
+
+@source '../../node_modules/flowbite-svelte/dist';
+@source '../../node_modules/flowbite-svelte-icons/dist';
+
+@theme {
+	--color-red: #b91c1c;
+	--color-red-dark: #7f1d1d;
+	--color-red-light: #fee2e2;
+	--color-cream: #fff7ed;
+}
