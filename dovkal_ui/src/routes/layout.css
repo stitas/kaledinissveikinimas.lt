@@ -12,7 +12,11 @@
 	--color-cream: #fff7ed;
 }
 
-html {
+html,
+body {
+	margin: 0;
+	width: 100%;
+	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 

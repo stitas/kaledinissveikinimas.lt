@@ -1,5 +1,5 @@
 <script lang="ts">
-    type Props = {
+	type Props = {
 		posterSrc?: string;
 		videoSrc?: string;
 		posterAlt?: string;
@@ -12,9 +12,9 @@
 	let showVideo = $state(false);
 </script>
 
-<div class="relative mx-auto w-full max-w-6xl justify-self-center xl:mx-0 xl:max-w-264 xl:justify-self-end">
-	<div class="rounded-3xl bg-red-light p-4 shadow-xl sm:p-5">
-		<div class="overflow-hidden rounded-2xl bg-white">
+<div class="relative mx-auto w-full max-w-4xl justify-self-center xl:mx-0 xl:max-w-3xl xl:justify-self-end 2xl:max-w-4xl">
+	<div class="rounded-2xl bg-red-light p-3 shadow-xl sm:p-4">
+		<div class="overflow-hidden rounded-xl bg-white">
 			{#if showVideo}
 				<video
 					class="aspect-video w-full bg-black"
@@ -44,12 +44,8 @@
 						fetchpriority="high"
 					/>
 
-					<span
-						class="absolute inset-0 flex items-center justify-center bg-black/25 transition group-hover:bg-black/35"
-					>
-						<span
-							class="flex h-20 w-20 items-center justify-center rounded-full bg-white text-3xl text-red shadow-lg sm:h-24 sm:w-24 sm:text-4xl"
-						>
+					<span class="absolute inset-0 flex items-center justify-center bg-black/25 transition group-hover:bg-black/35">
+						<span class="flex h-14 w-14 items-center justify-center rounded-full bg-white text-2xl text-red shadow-lg sm:h-18 sm:w-18 sm:text-3xl">
 							▶
 						</span>
 					</span>
@@ -58,7 +54,7 @@
 		</div>
 	</div>
 
-	<p class="mt-4 text-center text-base text-gray-600 sm:text-lg">
+	<p class="mt-3 text-center text-sm text-gray-600 sm:text-base">
 		{caption}
 	</p>
 </div>
