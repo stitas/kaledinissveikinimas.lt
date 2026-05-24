@@ -106,7 +106,7 @@
     })
 </script>
 
-<section id={formId} aria-labelledby="creator-title" class="mx-auto max-w-512 px-6 pb-12">
+<section id={formId} aria-labelledby="creator-title" class="mx-auto max-w-512 px-6 pb-12 mb-20">
 	<form method="POST" class="space-y-12">
 		<input type="hidden" name="templateId" value={selectedTemplateId} />
 
@@ -156,7 +156,7 @@
 			<div class="mb-6 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex flex-wrap items-center gap-3">
                     <span class="text-3xl font-bold text-red">2</span>
-                    <label for="greetingText" class="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">
+                    <label for="greeting-text" class="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">
                         Parašykite sveikinimo tekstą
                     </label>
 
@@ -169,8 +169,8 @@
             </div>
 
 			<textarea
-				id="greetingText"
-				name="greetingText"
+				id="greeting-text"
+				name="greeting-text"
 				bind:value={message}
 				maxlength={maxCharacters}
 				rows="8"

@@ -3,6 +3,7 @@
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
 	import GreetingInput from '$lib/components/GreetingInput.svelte';
+	import HowItWorks from '$lib/components/HowItWorks.svelte';
 
 	let showTopBanner = $state(true);
 
@@ -12,11 +13,11 @@
 </script>
 
 <svelte:head>
-	<title>Kalėdinė dovana | Unikalus Kalėdų Senelio video sveikinimas</title>
+	<title>Kalėdinė dovana | Kalėdų Senelio video sveikinimas nuo 6,99€</title>
 
 	<meta
 		name="description"
-		content="Padovanokite stebuklą! Sukurkite unikalų Kalėdų Senelio video sveikinimą vos per kelias minutes. Nuostabi kalėdinė dovana vaikams, draugams ir kolegoms."
+		content="Sukurkite personalizuotą Kalėdų Senelio video sveikinimą vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms tik nuo 6,99€"
 	/>
 
 	<meta name="robots" content="index, follow, max-image-preview:large" />
@@ -89,7 +90,7 @@
 
 				<div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center xl:justify-start">
 					<Button
-						href="#sukurti-sveikinima"
+						href="#create-greeting"
 						size="lg"
 						class="bg-red px-8 py-4 text-lg hover:bg-red-dark"
 					>
@@ -136,7 +137,7 @@
 
 	
 		<a
-            href="#sukurti-sveikinima"
+            href="#create-greeting"
             class="mx-auto mt-8 flex items-center justify-center gap-3 text-5xl font-bold text-red transition hover:text-red-dark xl:mt-56 sm:gap-5"
             aria-label="Eiti į sveikinimo kūrimo formą"
         >
@@ -171,7 +172,7 @@
 	<GreetingInput />
 	
 	<!-- Update home screen with video carousel of different santas -->
-	<!-- How it works -->
+	<HowItWorks />
 	<!-- Pricing -->
 	<!-- Faq -->
 	<!-- Greeting input repeat -->
