@@ -5,6 +5,7 @@
 	import GreetingInput from '$lib/components/GreetingInput.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import GiftIdeas from '$lib/components/GiftIdeas.svelte';
+	import Faq from '$lib/components/Faq.svelte';
 
 	let showTopBanner = $state(true);
 
@@ -176,7 +177,7 @@
 	<!-- Update home screen with video carousel of different santas -->
 	<HowItWorks />
 	<GiftIdeas />
-	<!-- Faq -->
-	<!-- Greeting input repeat -->
+	<Faq />
+	<GreetingInput />
 	<!-- Footer -->
 </main>
