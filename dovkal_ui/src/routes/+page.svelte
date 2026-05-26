@@ -2,12 +2,39 @@
 	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
-	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
 	import GreetingInput from '$lib/components/GreetingInput.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import GiftIdeas from '$lib/components/GiftIdeas.svelte';
 	import Faq from '$lib/components/Faq.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import VideoCarousel, { type VideoSlide } from '$lib/components/VideoCarousel.svelte';
+
+	const heroVideos: VideoSlide[] = [
+		{
+			id: 'classic-santa',
+			posterSrc: '/images/santa-classic-preview.jpg',
+			videoSrc: '/videos/santa-demo.mp4',
+			posterAlt: 'Klasikinio Kalėdų Senelio video sveikinimo peržiūra',
+			videoLabel: 'Klasikinio Kalėdų Senelio video sveikinimas',
+			caption: 'Klasikinis Kalėdų Senelio sveikinimas vaikams ir šeimai.'
+		},
+		{
+			id: 'cozy-santa',
+			posterSrc: '/images/santa-cozy-preview.jpg',
+			videoSrc: '/videos/santa-cozy-demo.mp4',
+			posterAlt: 'Jaukaus Kalėdų Senelio video sveikinimo peržiūra',
+			videoLabel: 'Jaukaus Kalėdų Senelio video sveikinimas',
+			caption: 'Jaukus Kalėdų Senelio sveikinimas artimiesiems ir draugams.'
+		},
+		{
+			id: 'modern-santa',
+			posterSrc: '/images/santa-modern-preview.jpg',
+			videoSrc: '/videos/santa-modern-demo.mp4',
+			posterAlt: 'Modernaus Kalėdų Senelio video sveikinimo peržiūra',
+			videoLabel: 'Modernaus Kalėdų Senelio video sveikinimas',
+			caption: 'Modernus Kalėdų Senelio sveikinimas draugams ar kolegoms.'
+		}
+	];
 
 	let showTopBanner = $state(true);
 
@@ -132,13 +159,7 @@
 				</ul>
 			</div>
 
-			<VideoPlayer
-				posterSrc="/images/santa-classic-preview.jpg"
-				videoSrc="/videos/santa-demo.mp4"
-				posterAlt="Pavyzdinis personalizuotas Kalėdų Senelio video sveikinimas"
-				videoLabel="Pavyzdinis Kalėdų Senelio video sveikinimas"
-				caption="Peržiūrėkite, kaip gali atrodyti jūsų sukurtas sveikinimas."
-			/>
+			<VideoCarousel videos={heroVideos} />
 		</div>
 
 		<a
