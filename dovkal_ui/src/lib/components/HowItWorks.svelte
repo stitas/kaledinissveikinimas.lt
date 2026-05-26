@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 </script>
 
@@ -33,7 +34,7 @@
 							1 žingsnis
 						</p>
 
-						<h3 class="text-2xl font-bold md:text-3xl">Pasirinkite Kalėdų Senelio video šabloną</h3>
+						<h3 class="text-xl font-bold md:text-2xl">Pasirinkite Kalėdų Senelio video šabloną</h3>
 
 						<p class="mt-4 text-base leading-7 text-gray-600 md:text-lg">
 							Išsirinkite, kaip atrodys jūsų Kalėdų Senelio video sveikinimas.
@@ -51,7 +52,7 @@
 							2 žingsnis
 						</p>
 
-						<h3 class="text-2xl font-bold md:text-3xl">Parašykite sveikinimo tekstą</h3>
+						<h3 class="text-xl font-bold md:text-2xl">Parašykite sveikinimo tekstą</h3>
 
 						<p class="mt-4 text-base leading-7 text-gray-600 md:text-lg">
 							Įrašykite kalėdinį sveikinimą vaikui, draugui ar kolegai. Arba rinkites iš jau sukurtų
@@ -74,7 +75,7 @@
 							3 žingsnis
 						</p>
 
-						<h3 class="text-2xl font-bold md:text-3xl">Apmokėkite ir gaukite video el. paštu</h3>
+						<h3 class="text-xl font-bold md:text-2xl">Apmokėkite ir gaukite video el. paštu</h3>
 
 						<p class="mt-4 text-base leading-7 text-gray-600 md:text-lg">
 							Po apmokėjimo sukursime personalizuotą Kalėdų Senelio video sveikinimą. Nuorodą
@@ -87,7 +88,7 @@
 
 		<div class="mt-14 flex justify-center">
 			<Button
-				href="#create-greeting"
+				href={resolve('/#create-greeting')}
 				size="xl"
 				class="bg-white px-6 py-3 text-base font-bold text-red hover:bg-red-light md:text-lg"
 			>

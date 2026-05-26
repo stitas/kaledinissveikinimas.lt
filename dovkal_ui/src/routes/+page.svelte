@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
@@ -6,6 +7,7 @@
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import GiftIdeas from '$lib/components/GiftIdeas.svelte';
 	import Faq from '$lib/components/Faq.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let showTopBanner = $state(true);
 
@@ -94,7 +96,7 @@
 
 				<div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center xl:justify-start">
 					<Button
-						href="#create-greeting"
+						href={resolve('/#create-greeting')}
 						size="lg"
 						class="bg-red px-6 py-3 text-base hover:bg-red-dark"
 					>
@@ -140,7 +142,7 @@
 		</div>
 
 		<a
-			href="#create-greeting"
+			href={resolve('/#create-greeting')}
 			class="mx-auto mt-8 flex items-center justify-center gap-2 text-xl font-bold text-red transition hover:text-red-dark sm:gap-3 sm:text-2xl md:text-3xl xl:mt-24"
 			aria-label="Eiti į sveikinimo kūrimo formą"
 		>
@@ -179,5 +181,6 @@
 	<GiftIdeas />
 	<Faq />
 	<GreetingInput />
+	<Footer />
 	<!-- Footer -->
 </main>

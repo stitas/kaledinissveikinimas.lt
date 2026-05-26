@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 
 	type GiftIdea = {
@@ -79,7 +80,7 @@
 
 						<div class="mt-6 flex justify-center lg:justify-start">
 							<Button
-								href="#create-greeting"
+								href={resolve('/#create-greeting')}
 								size="lg"
 								class="bg-red px-6 py-3 text-base font-bold hover:bg-red-dark md:text-lg"
 							>
