@@ -12,27 +12,27 @@
 	const heroVideos: VideoSlide[] = [
 		{
 			id: 'classic-santa',
-			posterSrc: '/images/santa-classic-preview.jpg',
+			posterSrc: '/images/santa/regular.webp',
 			videoSrc: '/videos/santa-demo.mp4',
 			posterAlt: 'Klasikinio Kalėdų Senelio video sveikinimo peržiūra',
 			videoLabel: 'Klasikinio Kalėdų Senelio video sveikinimas',
-			caption: 'Klasikinis Kalėdų Senelio sveikinimas vaikams ir šeimai.'
+			caption: 'Klasikinis Kalėdų Senelio sveikinimas vaikams.'
 		},
 		{
-			id: 'cozy-santa',
-			posterSrc: '/images/santa-cozy-preview.jpg',
+			id: 'sleigh-santa',
+			posterSrc: '/images/santa/sleigh.webp',
 			videoSrc: '/videos/santa-cozy-demo.mp4',
-			posterAlt: 'Jaukaus Kalėdų Senelio video sveikinimo peržiūra',
-			videoLabel: 'Jaukaus Kalėdų Senelio video sveikinimas',
-			caption: 'Jaukus Kalėdų Senelio sveikinimas artimiesiems ir draugams.'
+			posterAlt: 'Kalėdų Senelio kieme prie rogių video sveikinimo peržiūra',
+			videoLabel: 'Kalėdų Senelio kieme prie rogių video sveikinimas',
+			caption: 'Kalėdų Senelio kieme prie rogių sveikinimas draugams.'
 		},
 		{
-			id: 'modern-santa',
-			posterSrc: '/images/santa-modern-preview.jpg',
+			id: 'chimney-santa',
+			posterSrc: '/images/santa/chimney.webp',
 			videoSrc: '/videos/santa-modern-demo.mp4',
-			posterAlt: 'Modernaus Kalėdų Senelio video sveikinimo peržiūra',
-			videoLabel: 'Modernaus Kalėdų Senelio video sveikinimas',
-			caption: 'Modernus Kalėdų Senelio sveikinimas draugams ar kolegoms.'
+			posterAlt: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimo peržiūra',
+			videoLabel: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimas',
+			caption: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimas kolegoms.'
 		}
 	];
 

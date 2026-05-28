@@ -31,20 +31,20 @@
 		{
 			id: 'classic-santa',
 			name: 'Klasikinis Kalėdų Senelis',
-			image: '/images/santa-classic-preview.jpg',
+			image: '/images/santa/regular.webp',
 			alt: 'Klasikinis Kalėdų Senelis jaukiame kalėdiniame kambaryje'
 		},
 		{
-			id: 'outdoor-santa',
-			name: 'Kalėdų Senelis lauke',
-			image: '/images/santa-classic-preview.jpg',
-			alt: 'Kalėdų Senelis lauke žiemos fone'
+			id: 'sleigh-santa',
+			name: 'Kalėdų Senelis lauke prie rogių',
+			image: '/images/santa/sleigh.webp',
+			alt: 'Kalėdų Senelis lauke žiemos fone prie rogių'
 		},
 		{
-			id: 'modern-santa',
-			name: 'Modernus Kalėdų Senelis',
-			image: '/images/santa-classic-preview.jpg',
-			alt: 'Modernus Kalėdų Senelis šviesiame kambaryje'
+			id: 'chimney-santa',
+			name: 'Kalėdų Senelis ant stogo prie kamino',
+			image: '/images/santa/chimney.webp',
+			alt: 'Kalėdų Senelis lauke ant namo stogo prie kamino'
 		}
 	];
 
