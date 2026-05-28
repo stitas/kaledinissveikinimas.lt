@@ -1,0 +1,62 @@
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Node / Svelte
+dovkal_ui/node_modules/
+dovkal_ui/.output/
+dovkal_ui/.vercel/
+dovkal_ui/.netlify/
+dovkal_ui/.wrangler/
+dovkal_ui/.svelte-kit/
+dovkal_ui/build/
+dovkal_ui/vite.config.js.timestamp-*
+dovkal_ui/vite.config.ts.timestamp-*
+
+# Gradle / Spring
+dovkal/HELP.md
+dovkal/.gradle/
+dovkal/build/
+!dovkal/gradle/wrapper/gradle-wrapper.jar
+!dovkal/**/src/main/**/build/
+!dovkal/**/src/test/**/build/
+dovkal/.kotlin/
+
+# STS
+dovkal/.apt_generated/
+dovkal/.classpath
+dovkal/.factorypath
+dovkal/.project
+dovkal/.settings/
+dovkal/.springBeans
+dovkal/.sts4-cache/
+dovkal/bin/
+!dovkal/**/src/main/**/bin/
+!dovkal/**/src/test/**/bin/
+
+# IntelliJ IDEA
+.idea/
+dovkal/.idea/
+*.iws
+*.iml
+*.ipr
+dovkal/out/
+!dovkal/**/src/main/**/out/
+!dovkal/**/src/test/**/out/
+
+# NetBeans
+dovkal/nbproject/private/
+dovkal/nbbuild/
+dovkal/dist/
+dovkal/nbdist/
+dovkal/.nb-gradle/
+
+# VS Code
+.vscode/
+dovkal/.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
