@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1_create_orders_table" author="stitas">
+        <sql>
+            CREATE TABLE orders (
+                id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+                stripe_checkout_id VARCHAR(255) UNIQUE NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                santa_type VARCHAR(20) NOT NULL,
+                status VARCHAR(20) NOT NULL,
+                message VARCHAR(1500) NOT NULL,
+                message_size INTEGER NOT NULL,
+                created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+            );
+        </sql>
+
+        <rollback>
+            <sql>
+                DROP TABLE orders;
+            </sql>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
