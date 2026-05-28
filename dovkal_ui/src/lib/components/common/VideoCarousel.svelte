@@ -1,5 +1,5 @@
 <script lang="ts">
-	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+	import VideoPlayer from '$lib/components/common/VideoPlayer.svelte';
 
 	export type VideoSlide = {
 		id: string;

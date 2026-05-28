@@ -2,12 +2,12 @@
 	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
-	import GreetingInput from '$lib/components/GreetingInput.svelte';
-	import HowItWorks from '$lib/components/HowItWorks.svelte';
-	import GiftIdeas from '$lib/components/GiftIdeas.svelte';
-	import Faq from '$lib/components/Faq.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import VideoCarousel, { type VideoSlide } from '$lib/components/VideoCarousel.svelte';
+	import GreetingInput from '$lib/components/home/GreetingInput.svelte';
+	import HowItWorks from '$lib/components/home/HowItWorks.svelte';
+	import GiftIdeas from '$lib/components/home/GiftIdeas.svelte';
+	import Faq from '$lib/components/home/Faq.svelte';
+	import Footer from '$lib/components/common/Footer.svelte';
+	import VideoCarousel, { type VideoSlide } from '$lib/components/common/VideoCarousel.svelte';
 
 	const heroVideos: VideoSlide[] = [
 		{
@@ -154,7 +154,7 @@
 						<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-light text-red">
 							<ClockOutline size="md" ariaLabel="Užtrukimo laikas" />
 						</span>
-						<span>Užtrunka iki 10 min.</span>
+						<span>Gaukite video per 10 min.</span>
 					</li>
 				</ul>
 			</div>

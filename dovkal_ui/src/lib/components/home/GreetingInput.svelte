@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button } from 'flowbite-svelte';
-	import InfoTooltip from '$lib/components/InfoTooltip.svelte';
+	import InfoTooltip from '$lib/components/common/InfoTooltip.svelte';
 
 	type SantaTemplate = {
 		id: string;
