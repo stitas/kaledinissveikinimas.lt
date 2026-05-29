@@ -36,5 +36,6 @@ stripe:
   greeting-1125-price-id: ${STRIPE_GREETING_1125_PRICE_ID}
   greeting-1500-price-id: ${STRIPE_GREETING_1500_PRICE_ID}
   success-url: ${STRIPE_SUCCESS_URL}
+  cancel-url: ${STRIPE_CANCEL_URL}
 
 kind: Application
