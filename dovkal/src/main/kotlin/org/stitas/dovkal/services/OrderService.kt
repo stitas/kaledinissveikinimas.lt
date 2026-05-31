@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service
 import org.stitas.dovkal.enums.OrderStatus
 import org.stitas.dovkal.models.Order
 import org.stitas.dovkal.repositories.OrderRepository
+import java.util.UUID
 
 @Service
 class OrderService(
@@ -19,11 +20,17 @@ class OrderService(
         return orderRepository.findByStripeCheckoutId(stripeCheckoutId)
     }
 
-    fun changeOrderStatus(order: Order, orderStatus: OrderStatus): Order {
+    fun changeOrderStatus(order: Order, orderStatus: OrderStatus) {
         order.status = orderStatus
-        val savedOrder = save(order)
-        log.info("Order status for customer={} changed to {}", savedOrder.email, savedOrder.status)
-        return savedOrder
+        log.info("Order status for customer={} changed to {}", order.email, order.status)
+    }
+
+    fun findByHeyGenVideoId(heyGenVideoId: String): Order? {
+        return orderRepository.findByHeyGenVideoId(heyGenVideoId)
+    }
+
+    fun findByOrderId(orderId: UUID): Order? {
+        return orderRepository.findById(orderId).orElse(null)
     }
 
     companion object {

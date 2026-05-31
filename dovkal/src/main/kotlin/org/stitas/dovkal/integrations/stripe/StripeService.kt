@@ -42,6 +42,7 @@ class StripeService(
             status = OrderStatus.WAITING_PAYMENT,
             message = checkoutRequestDto.message,
             messageSize = messageSize,
+            locale = checkoutRequestDto.locale,
         )
         orderService.save(order)
 
@@ -92,11 +93,12 @@ class StripeService(
 
     fun handleCheckoutSessionCompleted(session: Session) {
         val order = orderService.findByStripeCheckoutId(session.id) ?: run {
-            log.error("Failed to handle checkout session completed. Order not with stripeCheckoutId={} not found", session.id)
+            log.error("Failed to handle checkout session completed. Order with stripeCheckoutId={} not found", session.id)
             throw StripeIntegrationException(message = "Order not found by Stripe checkout id", httpStatus = HttpStatus.BAD_REQUEST)
         }
 
         orderService.changeOrderStatus(order, OrderStatus.PAID)
+        orderService.save(order)
 
         // TODO create video creation job and pass in order id
     }
@@ -108,6 +110,7 @@ class StripeService(
         }
 
         orderService.changeOrderStatus(order, OrderStatus.EXPIRED)
+        orderService.save(order)
     }
 
     companion object {

@@ -8,4 +8,6 @@ import java.util.UUID
 @Repository
 interface OrderRepository : JpaRepository<Order, UUID> {
     fun findByStripeCheckoutId(stripeCheckoutId: String): Order?
+
+    fun findByHeyGenVideoId(heyGenVideoId: String): Order?
 }

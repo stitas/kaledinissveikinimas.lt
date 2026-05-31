@@ -52,7 +52,7 @@
 		{
 			id: 'children',
 			label: 'Vaikams',
-			text: `Labas, [vardas]! Čia Kalėdų Senelis. Girdėjau, kad šiais metais buvai labai šaunus ir stengeisi būti geras. Aš labai tavimi didžiuojuosi! Linkiu tau stebuklingų Kalėdų, daug šypsenų, jaukių akimirkų su šeima ir, žinoma, smagių dovanų po eglute. Linksmų Kalėdų!`
+			text: `Ho ho ho!\nSveikas, [vardas]!\nČia Kalėdų Senelis. Visus metus stebėjau tavo elgėsį ir turiu pasakyti, kad didžiuojuosi tavimi. Šiais metais buvai labai geras vaikas, todėl turiu tau gerų žinių. Tavo vardą jau užsirašiau į ypatingų dovanų sąrašą. Elfai dirba iš peties, o aš nekantrauju kalėdų nakti aplankyti tavo namus.\nNepamiršk ir toliau klausyti mamos bei tėčio, būti mandagus, draugiškas ir padėti kitiems, kad kitais metais vėl atsidurtum mano sąraše.\nLinkiu tau daug džiaugsmo, skanių saldainių, o svarbiausia linksmų ir stebuklingų kalėdų. Iki Kalėdų, Rokai!`
 		},
 		{
 			id: 'friends',

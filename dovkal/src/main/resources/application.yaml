@@ -38,4 +38,9 @@ stripe:
   success-url: ${STRIPE_SUCCESS_URL}
   cancel-url: ${STRIPE_CANCEL_URL}
 
+heygen:
+  base-url: https://api.heygen.com
+  api-key: ${HEYGEN_API_KEY}
+  webhook-secret: ${HEYGEN_WEBHOOK_SECRET}
+
 kind: Application
