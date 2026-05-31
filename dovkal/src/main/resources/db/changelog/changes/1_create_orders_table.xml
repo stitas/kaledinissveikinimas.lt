@@ -14,8 +14,8 @@
                 email VARCHAR(255) NOT NULL,
                 santa_type VARCHAR(20) NOT NULL,
                 status VARCHAR(20) NOT NULL,
-                message VARCHAR(1500) NOT NULL,
-                message_size INTEGER NOT NULL,
+                script VARCHAR(1500) NOT NULL,
+                script_size INTEGER NOT NULL,
                 locale VARCHAR(2) NOT NULL,
                 created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
                 updated_at TIMESTAMPTZ NOT NULL DEFAULT now()

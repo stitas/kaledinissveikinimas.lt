@@ -26,7 +26,7 @@ class HeyGenService(
     val objectMapper: ObjectMapper,
 ) {
     fun sendVideoGenerationRequest(order: Order) {
-        val heyGenVideoId = heyGenApiClient.sendVideoGenerationRequest(order.santaType, order.message, order.locale.code)
+        val heyGenVideoId = heyGenApiClient.sendVideoGenerationRequest(order.santaType, order.script, order.locale.code)
 
         order.heyGenVideoId = heyGenVideoId
         orderService.changeOrderStatus(order, OrderStatus.PROCESSING)

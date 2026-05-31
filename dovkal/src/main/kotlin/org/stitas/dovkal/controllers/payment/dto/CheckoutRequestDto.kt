@@ -12,7 +12,7 @@ data class CheckoutRequestDto(
 
     @field:NotBlank(message = "Žinutė privaloma")
     @field:Size(min = 1, max = 1500, message = "Žinutė turi būti tarp 1 ir 1500 simbolių")
-    val message: String,
+    val script: String,
 
     @field:NotBlank(message = "El. paštas privalomas")
     @field:Email(message = "Blogas el. pašto formatas")

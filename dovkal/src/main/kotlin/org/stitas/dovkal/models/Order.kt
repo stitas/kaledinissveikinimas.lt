@@ -38,11 +38,11 @@ class Order(
     @Column(name = "status", nullable = false, length = 20)
     var status: OrderStatus,
 
-    @Column(name = "message", nullable = false, length = 1500)
-    var message: String,
+    @Column(name = "script", nullable = false, length = 1500)
+    var script: String,
 
-    @Column(name = "message_size", nullable = false)
-    var messageSize: Int,
+    @Column(name = "script_size", nullable = false)
+    var scriptSize: Int,
 
     @Enumerated(EnumType.STRING)
     @Column(name = "locale", nullable = false, length = 2)

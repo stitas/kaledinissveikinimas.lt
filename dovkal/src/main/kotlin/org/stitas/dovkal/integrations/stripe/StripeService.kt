@@ -23,13 +23,13 @@ class StripeService(
     fun createCheckoutSession(checkoutRequestDto: CheckoutRequestDto): String {
         log.info("Checkout session request by user={}", checkoutRequestDto.email)
 
-        val messageSize = checkoutRequestDto.message.length
+        val scriptSize = checkoutRequestDto.script.length
         val priceId = when {
-            messageSize < 1 -> throw StripeIntegrationException(message = "Message too short", httpStatus = HttpStatus.BAD_REQUEST)
-            messageSize < 375 -> stripeProperties.greeting375PriceId
-            messageSize < 750 -> stripeProperties.greeting750PriceId
-            messageSize < 1125 -> stripeProperties.greeting1125PriceId
-            messageSize < 1500 -> stripeProperties.greeting1500PriceId
+            scriptSize < 1 -> throw StripeIntegrationException(message = "Message too short", httpStatus = HttpStatus.BAD_REQUEST)
+            scriptSize < 375 -> stripeProperties.greeting375PriceId
+            scriptSize < 750 -> stripeProperties.greeting750PriceId
+            scriptSize < 1125 -> stripeProperties.greeting1125PriceId
+            scriptSize < 1500 -> stripeProperties.greeting1500PriceId
             else -> throw StripeIntegrationException(message = "Message too long", httpStatus = HttpStatus.BAD_REQUEST)
         }
 
@@ -40,8 +40,8 @@ class StripeService(
             email = checkoutRequestDto.email,
             santaType = checkoutRequestDto.santaType,
             status = OrderStatus.WAITING_PAYMENT,
-            message = checkoutRequestDto.message,
-            messageSize = messageSize,
+            script = checkoutRequestDto.script,
+            scriptSize = scriptSize,
             locale = checkoutRequestDto.locale,
         )
         orderService.save(order)

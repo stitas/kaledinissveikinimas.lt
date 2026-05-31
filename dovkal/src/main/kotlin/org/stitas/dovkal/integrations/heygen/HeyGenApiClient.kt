@@ -19,11 +19,11 @@ class HeyGenApiClient(
     private val heyGenRestClient: RestClient
 ) {
 
-    fun sendVideoGenerationRequest(santaType: SantaType, message: String, locale: String): String {
+    fun sendVideoGenerationRequest(santaType: SantaType, script: String, locale: String): String {
         log.info("Sending video generation request to HeyGen for santaType={}", santaType.name)
         val requestBody = VideoGenerationRequestDto(
             avatarId = santaType.avatarId,
-            script = message,
+            script = script,
             voiceGenerationSettingsDto = VoiceGenerationSettingsDto(locale = locale)
         )
 
