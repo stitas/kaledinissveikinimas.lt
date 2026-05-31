@@ -19,14 +19,23 @@ spring:
     default-schema: dovkal
   servlet:
     multipart:
-      # TODO check sizes
-      max-file-size: 2MB
-      max-request-size: 2MB
+      enabled: false
+  mail:
+    host: smtp-relay.brevo.com
+    port: 587
+    username: ${BREVO_SMTP_LOGIN}
+    password: ${BREVO_SMTP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
-s3storage:
-  user: ${S3_ACCESS_KEY}
-  secret: ${S3_SECRET_KEY}
-  video-bucket-name: ${S3_BUCKET}
+logging:
+  email:
+    from: ${LOG_EMAIL_FROM}
+    to: ${LOG_EMAIL_TO}
 
 stripe:
   secret: ${STRIPE_SECRET}

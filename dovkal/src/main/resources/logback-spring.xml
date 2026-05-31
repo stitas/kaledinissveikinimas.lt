@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <springProperty scope="context" name="MAIL_HOST" source="spring.mail.host"/>
+    <springProperty scope="context" name="MAIL_PORT" source="spring.mail.port"/>
+    <springProperty scope="context" name="MAIL_USERNAME" source="spring.mail.username"/>
+    <springProperty scope="context" name="MAIL_PASSWORD" source="spring.mail.password"/>
+    <springProperty scope="context" name="LOG_EMAIL_FROM" source="logging.email.from"/>
+    <springProperty scope="context" name="LOG_EMAIL_TO" source="logging.email.to"/>
+
+    <appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+        <smtpHost>${MAIL_HOST}</smtpHost>
+        <smtpPort>${MAIL_PORT}</smtpPort>
+
+        <username>${MAIL_USERNAME}</username>
+        <password>${MAIL_PASSWORD}</password>
+
+        <STARTTLS>true</STARTTLS>
+        <SSL>false</SSL>
+
+        <from>${LOG_EMAIL_FROM}</from>
+        <to>${LOG_EMAIL_TO}</to>
+
+        <subject>[KaledinisSveikinimas.lt ERROR] %logger{36} - %msg</subject>
+
+        <asynchronousSending>true</asynchronousSending>
+
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                Time: %date%n
+                Level: %level%n
+                Thread: %thread%n
+                Logger: %logger%n
+                Message: %message%n
+                Exception:%n%ex{full}%n
+            </pattern>
+        </layout>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <springProfile name="prod">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="EMAIL"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="!prod">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+</configuration>
