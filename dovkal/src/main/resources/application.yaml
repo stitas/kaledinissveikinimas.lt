@@ -31,11 +31,15 @@ spring:
           auth: true
           starttls:
             enable: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
 
-logging:
-  email:
-    from: ${LOG_EMAIL_FROM}
-    to: ${LOG_EMAIL_TO}
+email:
+  from-name: ${EMAIL_FROM_NAME}
+  from: ${EMAIL_FROM}
+  to: ${EMAIL_TO}
+  frontend-download-url: https://kaledinissveikinimas.lt/sveikinimas/%s
 
 stripe:
   secret: ${STRIPE_SECRET}

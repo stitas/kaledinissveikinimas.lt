@@ -8,8 +8,8 @@
     <springProperty scope="context" name="MAIL_PORT" source="spring.mail.port"/>
     <springProperty scope="context" name="MAIL_USERNAME" source="spring.mail.username"/>
     <springProperty scope="context" name="MAIL_PASSWORD" source="spring.mail.password"/>
-    <springProperty scope="context" name="LOG_EMAIL_FROM" source="logging.email.from"/>
-    <springProperty scope="context" name="LOG_EMAIL_TO" source="logging.email.to"/>
+    <springProperty scope="context" name="LOG_EMAIL_FROM" source="email.from"/>
+    <springProperty scope="context" name="LOG_EMAIL_TO" source="email.to"/>
 
     <appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
         <smtpHost>${MAIL_HOST}</smtpHost>

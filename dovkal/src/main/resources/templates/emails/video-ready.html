@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="lt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jūsų video paruoštas</title>
+
+    <style th:utext="${emailCss}"></style>
+</head>
+<body>
+<div class="email-page">
+    <div class="email-container">
+        <div class="email-header">
+            <p class="email-brand">KaledinisSveikinimas.lt</p>
+            <p class="email-subtitle">Jūsų Kalėdų Senelio video sveikinimas paruoštas</p>
+        </div>
+
+        <div class="email-content">
+            <h1>Jūsų sveikinimas jau paruoštas!</h1>
+
+            <p>
+                Kalėdų Senelis jau įgarsino jūsų žinutę.
+                Video galite peržiūrėti ir atsisiųsti paspaudę žemiau esantį mygtuką.
+            </p>
+
+            <div class="button-wrap">
+                <a class="button" th:href="${videoPageUrl}">
+                    Peržiūrėti ir atsisiųsti video
+                </a>
+            </div>
+
+            <div class="order-box">
+                <p class="order-row">
+                    <span class="order-label">Užsakymo ID:</span>
+                    <span th:text="${orderId}">order-id</span>
+                </p>
+            </div>
+
+            <p class="small-text">
+                Jei mygtukas neveikia, nukopijuokite šią nuorodą į naršyklę:
+            </p>
+
+            <p class="small-text">
+                <a class="content-link" th:href="${videoPageUrl}" th:text="${videoPageUrl}">
+                    https://example.com
+                </a>
+            </p>
+        </div>
+
+        <div class="email-footer">
+            <p>
+                Ačiū, kad pasirinkote <strong>KaledinisSveikinimas.lt</strong>.<br />
+                Linkime jaukių ir stebuklingų švenčių!
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

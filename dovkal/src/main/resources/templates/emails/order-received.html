@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="lt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Užsakymas gautas</title>
+
+    <style th:utext="${emailCss}"></style>
+</head>
+<body>
+<div class="email-page">
+    <div class="email-container">
+        <div class="email-header">
+            <p class="email-brand">KaledinisSveikinimas.lt</p>
+            <p class="email-subtitle">Kalėdų Senelio video sveikinimas jau keliauja pas jus</p>
+        </div>
+
+        <div class="email-content">
+            <h1>Ačiū! Jūsų užsakymas priimtas</h1>
+
+            <p>
+                Gavome jūsų Kalėdų Senelio video sveikinimo užsakymą.
+                Pradėsime ruošti personalizuotą video pagal jūsų parašytą tekstą.
+            </p>
+
+            <p>
+                Kai video bus paruoštas, atsiųsime jums kitą el. laišką su peržiūros ir atsisiuntimo nuoroda.
+            </p>
+
+            <div class="order-box">
+                <p class="order-row">
+                    <span class="order-label">Užsakymo ID:</span>
+                    <span th:text="${orderId}">order-id</span>
+                </p>
+            </div>
+
+            <p class="small-text">
+                Jei šio užsakymo neatlikote jūs, susisiekite su mumis atsakydami į šį laišką.
+            </p>
+        </div>
+
+        <div class="email-footer">
+            <p>
+                Gražių švenčių!<br />
+                <strong>KaledinisSveikinimas.lt</strong>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

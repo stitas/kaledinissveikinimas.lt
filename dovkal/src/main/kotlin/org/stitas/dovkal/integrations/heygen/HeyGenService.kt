@@ -10,6 +10,7 @@ import org.stitas.dovkal.integrations.heygen.dto.HeyGenWebhookEnvelopeDto
 import org.stitas.dovkal.models.Order
 import org.stitas.dovkal.properties.HeyGenProperties
 import org.stitas.dovkal.services.OrderService
+import org.stitas.dovkal.services.CustomerEmailService
 import tools.jackson.databind.ObjectMapper
 import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
@@ -20,10 +21,11 @@ import kotlin.jvm.java
 
 @Service
 class HeyGenService(
-    val heyGenApiClient: HeyGenApiClient,
-    val heyGenProperties: HeyGenProperties,
-    val orderService: OrderService,
-    val objectMapper: ObjectMapper,
+    private val heyGenApiClient: HeyGenApiClient,
+    private val heyGenProperties: HeyGenProperties,
+    private val orderService: OrderService,
+    private val objectMapper: ObjectMapper,
+    private val emailService: CustomerEmailService,
 ) {
     fun sendVideoGenerationRequest(order: Order) {
         val heyGenVideoId = heyGenApiClient.sendVideoGenerationRequest(order.santaType, order.script, order.locale.code)
@@ -48,14 +50,13 @@ class HeyGenService(
 
         when (envelope.eventType) {
             "avatar_video.success" -> {
-                val videoId = processOrderBasedOnEvent(envelope, OrderStatus.DONE) ?: return
-                log.info("HeyGen avatar video completed successfully. videoId={}", videoId)
-
-                // TODO send email with download link
+                val order = processOrderBasedOnEvent(envelope, OrderStatus.DONE) ?: return
+                log.info("HeyGen avatar video completed successfully. orderId={}", order.id)
+                emailService.sendVideoReadyEmail(order.email, order.id)
             }
             "avatar_video.fail" -> {
-                val videoId = processOrderBasedOnEvent(envelope, OrderStatus.ERROR) ?: return
-                log.error("HeyGen avatar video generation failed. videoId={}, event_data={}", videoId, envelope.eventData)
+                val order = processOrderBasedOnEvent(envelope, OrderStatus.ERROR) ?: return
+                log.error("HeyGen avatar video generation failed. orderId={}, event_data={}", order.id, envelope.eventData)
             }
             else -> return
         }
@@ -99,7 +100,7 @@ class HeyGenService(
         }
     }
 
-    private fun processOrderBasedOnEvent(eventEnvelope: HeyGenWebhookEnvelopeDto, orderStatus: OrderStatus): String? {
+    private fun processOrderBasedOnEvent(eventEnvelope: HeyGenWebhookEnvelopeDto, orderStatus: OrderStatus): Order? {
         log.info("Processing order from webhook event={}", eventEnvelope.eventType)
 
         val eventData = eventEnvelope.eventData ?: run {
@@ -121,7 +122,7 @@ class HeyGenService(
 
         orderService.changeOrderStatus(order, orderStatus)
         orderService.save(order)
-        return data.videoId
+        return order
     }
 
     companion object {

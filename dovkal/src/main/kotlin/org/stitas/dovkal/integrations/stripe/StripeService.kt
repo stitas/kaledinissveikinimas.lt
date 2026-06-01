@@ -10,15 +10,19 @@ import org.springframework.stereotype.Service
 import org.stitas.dovkal.controllers.payment.dto.CheckoutRequestDto
 import org.stitas.dovkal.enums.OrderStatus
 import org.stitas.dovkal.exceptions.StripeIntegrationException
+import org.stitas.dovkal.integrations.heygen.HeyGenService
 import org.stitas.dovkal.models.Order
 import org.stitas.dovkal.properties.StripeProperties
 import org.stitas.dovkal.services.OrderService
+import org.stitas.dovkal.services.CustomerEmailService
 
 @Service
 class StripeService(
     private val stripeApiClient: StripeApiClient,
     private val stripeProperties: StripeProperties,
     private val orderService: OrderService,
+    private val emailService: CustomerEmailService,
+    private val heyGenService: HeyGenService,
 ) {
     fun createCheckoutSession(checkoutRequestDto: CheckoutRequestDto): String {
         log.info("Checkout session request by user={}", checkoutRequestDto.email)
@@ -97,10 +101,8 @@ class StripeService(
             throw StripeIntegrationException(message = "Order not found by Stripe checkout id", httpStatus = HttpStatus.BAD_REQUEST)
         }
 
-        orderService.changeOrderStatus(order, OrderStatus.PAID)
-        orderService.save(order)
-
-        // TODO create video creation job and pass in order id
+        heyGenService.sendVideoGenerationRequest(order)
+        emailService.sendOrderReceivedEmail(order.email, order.id)
     }
 
     fun handleCheckoutSessionExpired(session: Session) {

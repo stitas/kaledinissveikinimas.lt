@@ -15,7 +15,7 @@ import java.util.UUID
 @RestController
 @RequestMapping("/api/v1/video")
 class VideoController(
-    private val heyGenService: HeyGenService
+    private val heyGenService: HeyGenService,
 ) {
 
     @PostMapping("/hook")

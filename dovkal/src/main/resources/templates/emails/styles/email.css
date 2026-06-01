@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111827;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.email-page {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 24px 12px;
+}
+
+.email-container {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #fee2e2;
+}
+
+.email-header {
+    background-color: #b91c1c;
+    padding: 24px 28px;
+    text-align: center;
+}
+
+.email-brand {
+    margin: 0;
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.email-subtitle {
+    margin: 8px 0 0;
+    color: #fee2e2;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.email-content {
+    padding: 32px 28px;
+}
+
+h1 {
+    margin: 0 0 16px;
+    color: #111827;
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 16px;
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.order-box {
+    margin: 24px 0;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background-color: #fffafa;
+    border: 1px solid #fee2e2;
+}
+
+.order-row {
+    margin: 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.order-label {
+    font-weight: 700;
+    color: #111827;
+}
+
+.button-wrap {
+    margin: 28px 0;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 9px;
+    background-color: #b91c1c;
+    color: #ffffff !important;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.small-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b7280;
+}
+
+.content-link {
+    display: block;
+    max-width: 100%;
+    color: #b91c1c !important;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.email-footer {
+    padding: 22px 28px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.email-footer p {
+    margin: 0;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.email-footer strong {
+    color: #b91c1c;
+}
+
+@media only screen and (max-width: 600px) {
+    .email-page {
+        padding: 12px 8px;
+    }
+
+    .email-header,
+    .email-content,
+    .email-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .email-brand {
+        font-size: 24px;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+    }
+}
