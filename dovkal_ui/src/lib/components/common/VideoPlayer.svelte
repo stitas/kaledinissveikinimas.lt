@@ -13,7 +13,7 @@
 </script>
 
 <div class="relative mx-auto w-full max-w-4xl justify-self-center xl:mx-0 xl:max-w-3xl xl:justify-self-end 2xl:max-w-4xl">
-	<div class="rounded-2xl bg-red-light p-3 shadow-xl sm:p-4">
+	<div class="rounded-2xl bg-red-light/80 p-3 sm:p-4">
 		<div class="overflow-hidden rounded-xl bg-white">
 			{#if showVideo}
 				<video

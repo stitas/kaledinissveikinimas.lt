@@ -140,7 +140,7 @@
 						<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-light text-red">
 							<TextSizeOutline size="md" ariaLabel="Simbolių kiekis" />
 						</span>
-						<span>Iki 1500 simbolių</span>
+						<span>Jūsų sukurtas tekstas</span>
 					</li>
 
 					<li class="flex items-center justify-center gap-2 xl:justify-start">

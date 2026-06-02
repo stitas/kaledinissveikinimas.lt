@@ -20,7 +20,7 @@
 			<div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
 				<div>
 					<a href={resolve('/')} class="text-3xl font-bold tracking-tight text-white">
-						KaleduSenelioSveikinimas.lt
+						KaledinisSveikinimas.lt
 					</a>
 
 					<p class="mt-5 max-w-md text-base leading-7 text-red-light">
@@ -31,7 +31,7 @@
 					<div class="mt-6 flex gap-5">
 						<FooterIcon
 							href="https://www.facebook.com/"
-							aria-label="KaleduSenelioSveikinimas.lt Facebook paskyra"
+							aria-label="KaledinisSveikinimas.lt Facebook paskyra"
 							class="text-white hover:text-white!"
 						>
 							<FacebookSolid class="h-6 w-6" />
@@ -39,7 +39,7 @@
 
 						<FooterIcon
 							href="https://www.instagram.com/"
-							aria-label="KaleduSenelioSveikinimas.lt Instagram paskyra"
+							aria-label="KaledinisSveikinimas.lt Instagram paskyra"
 							class="text-white hover:text-white!"
 						>
 							<InstagramSolid class="h-6 w-6" />
@@ -47,7 +47,7 @@
 
 						<FooterIcon
 							href="https://www.tiktok.com/"
-							aria-label="KaleduSenelioSveikinimas.lt TikTok paskyra"
+							aria-label="KaledinisSveikinimas.lt TikTok paskyra"
 							class="text-white hover:text-white!"
 						>
 							<svg
@@ -141,7 +141,7 @@
 			<FooterCopyright
 				class="text-sm text-red-light!"
 				href={resolve('/')}
-				by="KaleduSenelioSveikinimas.lt"
+				by="KaledinisSveikinimas.lt"
 				year={currentYear}
 			/>
 

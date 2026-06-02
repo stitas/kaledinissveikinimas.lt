@@ -25,6 +25,12 @@
 		maxCharacters?: number;
 	};
 
+	const Locale = {
+		LT: 'lt-LT',
+		PL: 'pl-PL',
+		EN: 'en-EN'
+	} as const;
+
 	let { formId = 'create-greeting', maxCharacters = 1500 }: Props = $props();
 
 	const templates: SantaTemplate[] = [
@@ -52,17 +58,17 @@
 		{
 			id: 'children',
 			label: 'Vaikams',
-			text: `Ho ho ho!\nSveikas, [vardas]!\nČia Kalėdų Senelis. Visus metus stebėjau tavo elgėsį ir turiu pasakyti, kad didžiuojuosi tavimi. Šiais metais buvai labai geras vaikas, todėl turiu tau gerų žinių. Tavo vardą jau užsirašiau į ypatingų dovanų sąrašą. Elfai dirba iš peties, o aš nekantrauju kalėdų nakti aplankyti tavo namus.\nNepamiršk ir toliau klausyti mamos bei tėčio, būti mandagus, draugiškas ir padėti kitiems, kad kitais metais vėl atsidurtum mano sąraše.\nLinkiu tau daug džiaugsmo, skanių saldainių, o svarbiausia linksmų ir stebuklingų kalėdų. Iki Kalėdų, Rokai!`
+			text: `Ho ho ho!\n\nSveikas, [vardas]!\n\nČia Kalėdų Senelis. Visus metus stebėjau tavo elgėsį ir turiu pasakyti, kad didžiuojuosi tavimi. Šiais metais buvai labai geras vaikas, todėl turiu tau gerų žinių. Tavo vardą jau užsirašiau į ypatingų dovanų sąrašą. Elfai dirba iš peties, o aš nekantrauju kalėdų nakti aplankyti tavo namus.\n\nNepamiršk ir toliau klausyti mamos bei tėčio, būti mandagus, draugiškas ir padėti kitiems, kad kitais metais vėl atsidurtum mano sąraše.\n\nLinkiu tau daug džiaugsmo, skanių saldainių, o svarbiausia linksmų ir stebuklingų kalėdų.\n\nIki Kalėdų, Rokai!`
 		},
 		{
 			id: 'friends',
 			label: 'Draugams',
-			text: `Labas, [vardas]! Čia Kalėdų Senelis. Šiemet ilgai galvojau, ar tave įtraukti į gerų vaikų sąrašą, bet nusprendžiau suteikti dar vieną šansą. Tavo juokeliai gal ir ne visada geri, bet bent jau stengiesi! Linkiu tau linksmų Kalėdų, daug juoko, skanaus maisto ir kuo mažiau keistų sprendimų kitais metais.`
+			text: "Ho ho ho!\n\nSveikas, [vardas]! Čia Kalėdų Senelis. Gavau nemažai informacijos apie tave iš [jūsų vardas], todėl šiemet dovanų negausi. Na, gerai, juokauju - kažką gausi, nors [kažkoks gėdingas draugo momentas] tikrai nebuvo pliusas tavo sąraše.\n\nMetai buvo ilgi, todėl dabar metas pailsėti, gerai pavalgyti ir pasidžiaugti šventėmis... Man. O tau, [draugo vardas], užteks tinginiauti - metas pradėti eiti į sporto salę.\n\nLinkiu tau daug juoko, geros nuotaikos ir kuo mažiau rytų, kai tenka prisiminti, kokias nesąmones darei vakar. Tegul kitais metais netrūksta sėkmės, įdomių nuotykių ir progų pasijuokti iš savęs.\n\nLinksmų Kalėdų ir laimingų Naujųjų metų!"
 		},
 		{
 			id: 'colleagues',
 			label: 'Kolegoms',
-			text: `Sveiki, kolegos! Čia Kalėdų Senelis. Noriu padėkoti už jūsų darbą, kantrybę ir pastangas šiais metais. Linkiu jaukių Kalėdų, ramaus poilsio, daug šventinės nuotaikos ir sėkmingų ateinančių metų. Tegul po švenčių sugrįžta ne tik motyvacija, bet ir pilnai įkrautos baterijos!`
+			text: `Ho ho ho!\n\nSveiki, kolegos!\n\nČia Kalėdų Senelis. Gavau specialų dovanos užsakymą nuo jūsų kolegos [jūsų vardas].\n\nNoriu padėkoti už jūsų darbą, kantrybę ir pastangas šiais metais. Kiekviena diena atneša naujų iššūkių, tačiau būtent jūsų atkaklumas, pagalba vieni kitiems ir gera nuotaika padeda juos įveikti\n\nLinkiu jaukių Kalėdų, ramaus poilsio, daug šventinės nuotaikos ir sėkmingų ateinančių metų. Tegul po švenčių sugrįžta ne tik motyvacija, bet ir pilnai įkrautos baterijos!\n\nLinksmų Kalėdų ir laimingų Naujųjų metų!\n\nSu šilčiausiais linkėjimais,\nKalėdų Senelis`
 		}
 	];
 
@@ -79,6 +85,7 @@
 	];
 
 	let selectedTemplateId = $state(templates[0].id);
+	let selectedLanguage = $state(Locale.LT);
 	let message = $state('');
 	let email = $state('');
 
@@ -96,7 +103,10 @@
 	});
 
 	let canSubmit = $derived(
-		message.trim().length > 0 && email.trim().length > 0 && !isMessageTooLong
+		message.trim().length > 0 
+		&& email.trim().length > 0 
+		&& !isMessageTooLong 
+		&& Object.values(Locale).includes(selectedLanguage)
 	);
 	let btnText = $derived.by(() => {
 		if (!message) return 'Užpildykite sveikinimo tekstą';
@@ -162,9 +172,22 @@
 					<InfoTooltip text="Jūsų parašytas tekstas bus įgarsintas Kalėdų Senelio balsu." />
 				</div>
 
-				<p class="text-sm font-medium text-gray-500 sm:text-base">
-					Palaikomos anglų, lenkų ir kitos kalbos
-				</p>
+				<div class="flex items-center gap-2">
+					<label for="greeting-language" class="text-sm font-medium text-gray-600 sm:text-base">
+						Pasirinkite kalbą:
+					</label>
+					<select
+						id="greeting-language"
+						name="language"
+						bind:value={selectedLanguage}
+						required
+						class="w-36 rounded-xl border border-gray-300 bg-gray-50 py-2 pr-9 pl-4 text-sm font-medium text-gray-700 focus:border-red focus:ring-red sm:w-40 sm:text-base"
+					>
+						<option value={Locale.LT}>🇱🇹 Lietuvių</option>
+						<option value={Locale.PL}>🇵🇱 Lenkų</option>
+						<option value={Locale.EN}>🇬🇧 Anglų</option>
+					</select>
+				</div>
 			</div>
 
 			<textarea
@@ -174,6 +197,7 @@
 				maxlength={maxCharacters}
 				rows="8"
 				required
+				spellcheck="false"
 				class="w-full resize-none rounded-xl border border-gray-300 bg-gray-50 p-4 text-base text-gray-950 focus:border-red focus:ring-red sm:text-lg"
 				placeholder="Pvz.: Labas, Rokai! Kalėdų Senelis labai tavimi didžiuojasi..."
 			></textarea>
@@ -253,7 +277,7 @@
 		<Button
 			type="submit"
 			disabled={!canSubmit}
-			class="w-full bg-red px-6 py-4 text-lg font-bold hover:bg-red-dark disabled:cursor-not-allowed disabled:opacity-60"
+			class="w-full cursor-pointer bg-red px-6 py-4 text-lg font-bold hover:bg-red-dark disabled:cursor-not-allowed disabled:opacity-60"
 		>
 			{btnText}
 		</Button>
