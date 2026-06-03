@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { Button } from 'flowbite-svelte';
 	import InfoTooltip from '$lib/components/common/InfoTooltip.svelte';
+	import type { Locale, SantaType } from '$lib/server/payment';
+	import type { ActionData } from '../../../routes/$types';
+	import { enhance } from '$app/forms';
+	import type { SubmitFunction } from '@sveltejs/kit';
 
 	type SantaTemplate = {
 		id: string;
+		santaType: SantaType;
 		name: string;
 		image: string;
 		alt: string;
@@ -23,31 +28,29 @@
 	type Props = {
 		formId?: string;
 		maxCharacters?: number;
+		form: ActionData;
 	};
-
-	const Locale = {
-		LT: 'lt-LT',
-		PL: 'pl-PL',
-		EN: 'en-EN'
-	} as const;
 
 	let { formId = 'create-greeting', maxCharacters = 1500 }: Props = $props();
 
 	const templates: SantaTemplate[] = [
 		{
 			id: 'classic-santa',
+			santaType: 'CLASSIC',
 			name: 'Klasikinis Kalėdų Senelis',
 			image: '/images/santa/regular.webp',
 			alt: 'Klasikinis Kalėdų Senelis jaukiame kalėdiniame kambaryje'
 		},
 		{
 			id: 'sleigh-santa',
+			santaType: 'SLEIGH',
 			name: 'Kalėdų Senelis lauke prie rogių',
 			image: '/images/santa/sleigh.webp',
 			alt: 'Kalėdų Senelis lauke žiemos fone prie rogių'
 		},
 		{
 			id: 'chimney-santa',
+			santaType: 'CHIMNEY',
 			name: 'Kalėdų Senelis ant stogo prie kamino',
 			image: '/images/santa/chimney.webp',
 			alt: 'Kalėdų Senelis lauke ant namo stogo prie kamino'
@@ -85,7 +88,10 @@
 	];
 
 	let selectedTemplateId = $state(templates[0].id);
-	let selectedLanguage = $state(Locale.LT);
+	let selectedSantaType = $derived(
+		templates.find((template) => template.id === selectedTemplateId)?.santaType ?? 'CLASSIC'
+	);
+	let selectedLanguage: Locale = $state('LT');
 	let message = $state('');
 	let email = $state('');
 
@@ -105,19 +111,32 @@
 	let canSubmit = $derived(
 		message.trim().length > 0 
 		&& email.trim().length > 0 
-		&& !isMessageTooLong 
-		&& Object.values(Locale).includes(selectedLanguage)
+		&& !isMessageTooLong
 	);
+
 	let btnText = $derived.by(() => {
 		if (!message) return 'Užpildykite sveikinimo tekstą';
 		if (!email) return 'Įveskite savo el. pašto adresą';
 		return `Sukurti Kalėdų Senelio video už ${currentPrice}€`;
 	});
+
+	let isSubmitting = $state(false);
+	const handleSubmit: SubmitFunction = () => {
+		isSubmitting = true;
+
+		return async ({ result, update }) => {
+			await update({ reset: false });
+
+			if (result.type === 'failure') {
+				isSubmitting = false;
+			}
+		};
+	};
 </script>
 
 <section id={formId} aria-labelledby="creator-title" class="mx-auto mb-14 max-w-6xl px-4 pb-8 lg:px-6">
-	<form method="POST" class="space-y-9">
-		<input type="hidden" name="templateId" value={selectedTemplateId} />
+	<form method="POST" action="?/createCheckout" use:enhance={handleSubmit} class="space-y-9">
+		<input type="hidden" name="santaType" value={selectedSantaType} />
 
 		<fieldset>
 			<div class="mb-4 flex items-center gap-2">
@@ -178,21 +197,21 @@
 					</label>
 					<select
 						id="greeting-language"
-						name="language"
+						name="locale"
 						bind:value={selectedLanguage}
 						required
 						class="w-36 rounded-xl border border-gray-300 bg-gray-50 py-2 pr-9 pl-4 text-sm font-medium text-gray-700 focus:border-red focus:ring-red sm:w-40 sm:text-base"
 					>
-						<option value={Locale.LT}>🇱🇹 Lietuvių</option>
-						<option value={Locale.PL}>🇵🇱 Lenkų</option>
-						<option value={Locale.EN}>🇬🇧 Anglų</option>
+						<option value='LT'>🇱🇹 Lietuvių</option>
+						<option value='PL'>🇵🇱 Lenkų</option>
+						<option value='EN'>🇬🇧 Anglų</option>
 					</select>
 				</div>
 			</div>
 
 			<textarea
 				id="greeting-text"
-				name="greeting-text"
+				name="script"
 				bind:value={message}
 				maxlength={maxCharacters}
 				rows="8"
@@ -276,10 +295,10 @@
 
 		<Button
 			type="submit"
-			disabled={!canSubmit}
+			disabled={!canSubmit || isSubmitting}
 			class="w-full cursor-pointer bg-red px-6 py-4 text-lg font-bold hover:bg-red-dark disabled:cursor-not-allowed disabled:opacity-60"
 		>
-			{btnText}
+			{isSubmitting ? 'Nukreipiame į apmokėjimą...' : btnText}
 		</Button>
 	</form>
 </section>

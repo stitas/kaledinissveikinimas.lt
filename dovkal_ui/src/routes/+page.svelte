@@ -2,12 +2,17 @@
 	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
+	import type { PageProps } from './$types';
+
 	import GreetingInput from '$lib/components/home/GreetingInput.svelte';
 	import HowItWorks from '$lib/components/home/HowItWorks.svelte';
 	import GiftIdeas from '$lib/components/home/GiftIdeas.svelte';
 	import Faq from '$lib/components/home/Faq.svelte';
 	import Footer from '$lib/components/common/Footer.svelte';
+	import ToastNotifications from '$lib/components/common/ToastNotifications.svelte';
 	import VideoCarousel, { type VideoSlide } from '$lib/components/common/VideoCarousel.svelte';
+
+	let { form }: PageProps = $props();
 
 	const heroVideos: VideoSlide[] = [
 		{
@@ -93,6 +98,8 @@
 
 <svelte:window onscroll={handleScroll} />
 
+<ToastNotifications message={form?.error} color="red" />
+
 {#if showTopBanner}
 	<div class="fixed inset-x-0 top-0 z-50 bg-red text-white shadow-md">
 		<div class="mx-auto max-w-7xl px-4 py-2 text-center text-sm leading-5 font-semibold sm:py-3 md:text-base">
@@ -102,7 +109,10 @@
 {/if}
 
 <main class="bg-white">
-	<section aria-labelledby="hero-title" class="mx-auto mt-16 flex min-h-screen max-w-7xl flex-col justify-center px-4 py-12 sm:px-6 xl:mt-6 xl:px-8">
+	<section
+		aria-labelledby="hero-title"
+		class="mx-auto mt-16 flex min-h-screen max-w-7xl flex-col justify-center px-4 py-12 sm:px-6 xl:mt-6 xl:px-8"
+	>
 		<div class="grid items-center gap-10 xl:grid-cols-[minmax(0,34rem)_minmax(0,48rem)] xl:gap-16 2xl:gap-20">
 			<div class="mx-auto max-w-2xl text-center xl:mx-0 xl:text-left">
 				<p class="mb-3 text-sm font-semibold tracking-wide text-red uppercase sm:text-base">
@@ -195,13 +205,10 @@
 		</a>
 	</section>
 
-	<GreetingInput />
+	<GreetingInput {form} />
 
-	<!-- Update home screen with video carousel of different santas -->
 	<HowItWorks />
 	<GiftIdeas />
 	<Faq />
-	<GreetingInput />
 	<Footer />
-	<!-- Footer -->
 </main>
