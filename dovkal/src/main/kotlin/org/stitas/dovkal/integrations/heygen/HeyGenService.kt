@@ -7,6 +7,8 @@ import org.stitas.dovkal.enums.OrderStatus
 import org.stitas.dovkal.exceptions.HeyGenIntegrationException
 import org.stitas.dovkal.integrations.heygen.dto.AvatarVideoEventDataDto
 import org.stitas.dovkal.integrations.heygen.dto.HeyGenWebhookEnvelopeDto
+import org.stitas.dovkal.integrations.heygen.dto.VideoDataDto
+import org.stitas.dovkal.integrations.heygen.dto.VideoDataResponseDto
 import org.stitas.dovkal.models.Order
 import org.stitas.dovkal.properties.HeyGenProperties
 import org.stitas.dovkal.services.OrderService
@@ -35,7 +37,7 @@ class HeyGenService(
         orderService.save(order)
     }
 
-    fun getVideoUrl(orderId: UUID): String {
+    fun getVideoUrl(orderId: UUID): VideoDataDto {
         val order = orderService.findByOrderId(orderId) ?: throw HeyGenIntegrationException("Order not found", httpStatus = HttpStatus.NOT_FOUND)
         val videoId = order.heyGenVideoId ?: throw HeyGenIntegrationException("Video does not exist", httpStatus = HttpStatus.NOT_FOUND)
         return heyGenApiClient.getVideoUrl(videoId)

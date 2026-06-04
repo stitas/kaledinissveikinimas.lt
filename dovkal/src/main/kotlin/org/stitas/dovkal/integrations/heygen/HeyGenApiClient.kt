@@ -8,6 +8,7 @@ import org.springframework.util.StreamUtils
 import org.springframework.web.client.RestClient
 import org.stitas.dovkal.enums.SantaType
 import org.stitas.dovkal.exceptions.HeyGenIntegrationException
+import org.stitas.dovkal.integrations.heygen.dto.VideoDataDto
 import org.stitas.dovkal.integrations.heygen.dto.VideoDataResponseDto
 import org.stitas.dovkal.integrations.heygen.dto.VideoGenerationRequestDto
 import org.stitas.dovkal.integrations.heygen.dto.VideoGenerationResponseDto
@@ -53,7 +54,7 @@ class HeyGenApiClient(
         return response.data.videoId
     }
 
-    fun getVideoUrl(videoId: String): String {
+    fun getVideoUrl(videoId: String): VideoDataDto {
         val response = heyGenRestClient.get()
             .uri("/v3/videos/${videoId}")
             .retrieve()
@@ -75,7 +76,7 @@ class HeyGenApiClient(
                 throw HeyGenIntegrationException("HeyGen get video data response returned empty body")
             }
 
-        return response.data.videoUrl
+        return response.data
     }
 
     private fun getResponseBody(response: ClientHttpResponse): String {

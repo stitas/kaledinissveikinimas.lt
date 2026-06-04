@@ -1,8 +1,8 @@
 package org.stitas.dovkal.integrations.heygen.dto
 
 
+import com.fasterxml.jackson.annotation.JsonAlias
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.annotation.JsonProperty
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class VideoDataResponseDto(
@@ -11,6 +11,9 @@ data class VideoDataResponseDto(
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class VideoDataDto(
-    @JsonProperty("video_url")
+    @JsonAlias("video_url")
     val videoUrl: String,
+
+    @JsonAlias("thumbnail_url")
+    val thumbnailUrl: String,
 )

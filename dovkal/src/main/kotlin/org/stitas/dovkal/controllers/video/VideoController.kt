@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import org.stitas.dovkal.controllers.video.dto.VideoUrlResponseDto
 import org.stitas.dovkal.integrations.heygen.HeyGenService
+import org.stitas.dovkal.integrations.heygen.dto.VideoDataDto
 import java.util.UUID
 
 @RestController
@@ -28,9 +28,8 @@ class VideoController(
     }
 
     @GetMapping("/{orderId}")
-    fun getVideoUrl(@PathVariable orderId: UUID): VideoUrlResponseDto {
-        val videoUrl = heyGenService.getVideoUrl(orderId)
-        return VideoUrlResponseDto(videoUrl)
+    fun getVideoUrl(@PathVariable orderId: UUID): VideoDataDto {
+        return heyGenService.getVideoUrl(orderId)
     }
 
 }
