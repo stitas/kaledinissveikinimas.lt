@@ -126,7 +126,7 @@
 							Privatumo politika
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/taisykles')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/naudojimo-taisykles')}>
 							Naudojimosi taisyklės
 						</FooterLink>
 					</FooterLinkGroup>
