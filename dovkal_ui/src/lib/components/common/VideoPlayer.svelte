@@ -54,7 +54,9 @@
 		</div>
 	</div>
 
-	<p class="mt-3 text-center text-sm text-gray-600 sm:text-base">
-		{caption}
-	</p>
+	{#if caption}
+		<p class="mt-3 text-center text-sm text-gray-600 sm:text-base">
+			{caption}
+		</p>
+	{/if}
 </div>
