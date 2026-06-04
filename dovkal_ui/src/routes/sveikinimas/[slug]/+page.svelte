@@ -17,7 +17,7 @@
 	<section aria-labelledby="greeting-title" class="relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] max-w-5xl flex-col items-center justify-center">
 		{#if data.video}
 			<h1 id="greeting-title" class="mb-2 text-center text-3xl leading-tight font-bold tracking-tight text-white sm:text-4xl xl:text-5xl">
-				Ačiū, kad perkate
+				Ačiū, kad perkate!
 			</h1>
 
 			<p class="mb-8 text-center text-base leading-7 text-red-light sm:text-lg">

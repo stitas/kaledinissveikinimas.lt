@@ -28,7 +28,8 @@
 						Originali kalėdinė dovana vaikams, draugams, šeimai ir kolegoms.
 					</p>
 
-					<div class="mt-6 flex gap-5">
+					<!-- TODO Create social media channels -->
+					<!-- <div class="mt-6 flex gap-5">
 						<FooterIcon
 							href="https://www.facebook.com/"
 							aria-label="KaledinisSveikinimas.lt Facebook paskyra"
@@ -62,7 +63,7 @@
 								/>
 							</svg>
 						</FooterIcon>
-					</div>
+					</div> -->
 				</div>
 
 				<nav aria-label="Pagrindinės svetainės nuorodos">
@@ -83,13 +84,15 @@
 							DUK
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog')}>
+						<!-- TODO add blog -->
+						<!-- <FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog')}>
 							Blogas
-						</FooterLink>
+						</FooterLink> -->
 					</FooterLinkGroup>
 				</nav>
 
-				<nav aria-label="Kalėdinių dovanų kategorijos">
+				<!-- TODO create articles -->
+				<!-- <nav aria-label="Kalėdinių dovanų kategorijos">
 					<h2 class="mb-6 text-sm font-bold uppercase tracking-wide text-red-light">
 						Kam tinka?
 					</h2>
@@ -111,7 +114,7 @@
 							Originalios kalėdinės dovanos
 						</FooterLink>
 					</FooterLinkGroup>
-				</nav>
+				</nav> -->
 
 				<nav aria-label="Teisinė informacija">
 					<h2 class="mb-6 text-sm font-bold uppercase tracking-wide text-red-light">
@@ -126,10 +129,6 @@
 						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/taisykles')}>
 							Naudojimosi taisyklės
 						</FooterLink>
-
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/kontaktai')}>
-							Kontaktai
-						</FooterLink>
 					</FooterLinkGroup>
 				</nav>
 			</div>
@@ -143,10 +142,11 @@
 				href={resolve('/')}
 				by="KaledinisSveikinimas.lt"
 				year={currentYear}
+				copyrightMessage="Visos teisės saugomos"
 			/>
 
 			<p class="text-sm text-red-light">
-				Personalizuotas Kalėdų Senelio video sveikinimas nuo 6,99 €.
+				Susisiekite: info@kaledenissveikinimas.lt
 			</p>
 		</div>
 	</div>

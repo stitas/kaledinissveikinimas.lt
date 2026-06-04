@@ -18,7 +18,7 @@
 		},
 		{
 			question: 'Ar galiu parašyti sveikinimą lietuviškai?',
-			answer: 'Taip. Galite rašyti sveikinimą lietuviškai. Taip pat palaikomos anglų, lenkų ir kitos kalbos, todėl sveikinimą galite pritaikyti skirtingiems žmonėms.'
+			answer: 'Taip. Galite rašyti sveikinimą lietuviškai. Taip pat palaikomos anglų ir lenkų kalbos, todėl sveikinimą galite pritaikyti skirtingiems žmonėms.'
 		},
 		{
 			question: 'Kam tinka tokia kalėdinė dovana?',
