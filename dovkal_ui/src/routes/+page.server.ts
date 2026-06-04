@@ -9,11 +9,12 @@ export const actions: Actions = {
         const script = String(formData.get('script') ?? '');
 		const email = String(formData.get('email') ?? '');
 		const locale = (formData.get('locale') ?? 'LT') as Locale;
+        const hasAcceptedTerms = formData.get('hasAcceptedTerms') === 'true';
 
         let checkoutUrl: string;
 
         try {
-            const requestDto: CheckoutRequest = { santaType, script, email, locale };
+            const requestDto: CheckoutRequest = { santaType, script, email, locale, hasAcceptedTerms };
             const checkoutData = await createCheckoutSession(requestDto, fetch);
             checkoutUrl = checkoutData.checkoutUrl
         } catch (error) {
@@ -23,7 +24,8 @@ export const actions: Actions = {
                     santaType,
                     script,
                     email,
-                    locale
+                    locale,
+                    hasAcceptedTerms
                 }
             });
         }

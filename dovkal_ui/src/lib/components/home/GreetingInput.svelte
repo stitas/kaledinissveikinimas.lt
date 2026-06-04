@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import InfoTooltip from '$lib/components/common/InfoTooltip.svelte';
 	import type { Locale, SantaType } from '$lib/server/payment';
@@ -94,6 +95,7 @@
 	let selectedLanguage: Locale = $state('LT');
 	let message = $state('');
 	let email = $state('');
+	let hasAcceptedTerms = $state(false);
 
 	let characterCount = $derived(message.length);
 	let remainingCharacters = $derived(maxCharacters - characterCount);
@@ -112,6 +114,7 @@
 		message.trim().length > 0 
 		&& email.trim().length > 0 
 		&& !isMessageTooLong
+		&& hasAcceptedTerms
 	);
 
 	let btnText = $derived.by(() => {
@@ -292,6 +295,23 @@
 				placeholder="jusu@email.lt"
 			/>
 		</div>
+
+		<label class="flex items-center gap-3 text-sm leading-6 text-gray-700 sm:text-base">
+			<input
+				type="checkbox"
+				name="hasAcceptedTerms"
+				value="true"
+				bind:checked={hasAcceptedTerms}
+				required
+				class="h-5 w-5 shrink-0 rounded border-gray-300 text-red focus:ring-red"
+			/>
+			<span class="inline">
+				Susipažinau ir sutinku su
+				<a href={resolve('/naudojimo-taisykles')} class="font-semibold text-red underline-offset-4 hover:underline">
+					naudojimo taisyklėmis
+				</a>.
+			</span>
+		</label>
 
 		<Button
 			type="submit"

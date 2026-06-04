@@ -25,6 +25,7 @@ export type CheckoutRequest = {
     script: string;
     email: string;
     locale: Locale;
+    hasAcceptedTerms: boolean;
 }
 
 export type CheckoutResponse = {

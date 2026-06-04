@@ -1,5 +1,6 @@
 package org.stitas.dovkal.controllers.payment.dto
 
+import jakarta.validation.constraints.AssertTrue
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.Size
@@ -20,4 +21,7 @@ data class CheckoutRequestDto(
     val email: String,
 
     val locale: Locale,
+
+    @field:AssertTrue(message = "Turite sutikti su naudojimo taisyklėmis")
+    val hasAcceptedTerms: Boolean,
 )
