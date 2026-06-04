@@ -81,7 +81,15 @@
 							Sukurti sveikinimą
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#faq')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#kaip-tai-veikia')}>
+							Kaip tai veikia?
+						</FooterLink>
+
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#kam-tinka-si-dovana')}>
+							Kam tinka ši dovana?
+						</FooterLink>
+
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#duk')}>
 							DUK
 						</FooterLink>
 

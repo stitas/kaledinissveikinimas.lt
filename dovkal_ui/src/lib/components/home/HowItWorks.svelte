@@ -3,7 +3,7 @@
 	import { Button } from 'flowbite-svelte';
 </script>
 
-<section aria-labelledby="how-it-works-title" class="bg-red px-4 py-16 text-white sm:py-20 lg:px-6">
+<section aria-labelledby="how-it-works-title" id="kaip-tai-veikia" class="bg-red px-4 py-16 text-white sm:py-20 lg:px-6">
 	<div class="mx-auto max-w-7xl">
 		<div class="mx-auto max-w-3xl text-center">
 			<p class="mb-3 text-sm font-semibold tracking-wide text-red-light uppercase sm:text-base">

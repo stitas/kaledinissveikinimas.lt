@@ -43,7 +43,7 @@
 	];
 </script>
 
-<section id="faq" aria-labelledby="faq-title" class="bg-white px-6 py-24 sm:py-32">
+<section id="duk" aria-labelledby="faq-title" class="bg-white px-6 py-24 sm:py-32">
 	<div class="mx-auto max-w-496">
 		<div class="mx-auto max-w-4xl text-center">
 			<p class="mb-4 text-sm font-semibold uppercase tracking-wide text-red sm:text-base">

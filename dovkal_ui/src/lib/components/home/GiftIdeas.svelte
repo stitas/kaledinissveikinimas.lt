@@ -35,7 +35,7 @@
 	];
 </script>
 
-<section aria-labelledby="gift-ideas-title" class="bg-white px-4 py-16 sm:py-20 lg:px-6">
+<section aria-labelledby="gift-ideas-title" id="kam-tinka-si-dovana" class="bg-white px-4 py-16 sm:py-20 lg:px-6">
 	<div class="mx-auto max-w-7xl">
 		<div class="mx-auto max-w-3xl text-center">
 			<p class="mb-3 text-sm font-semibold tracking-wide text-red uppercase sm:text-base">
