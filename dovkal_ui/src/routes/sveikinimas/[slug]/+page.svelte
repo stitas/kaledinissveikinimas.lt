@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { Button } from 'flowbite-svelte';
+	import type { PageProps } from './$types';
 	import VideoPlayer from '$lib/components/common/VideoPlayer.svelte';
+
+	let { data }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -12,26 +15,40 @@
 	<div class="snow-layer" aria-hidden="true"></div>
 
 	<section aria-labelledby="greeting-title" class="relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] max-w-5xl flex-col items-center justify-center">
-		<h1 id="greeting-title" class="mb-2 text-center text-3xl leading-tight font-bold tracking-tight text-white sm:text-4xl xl:text-5xl">
-			Ačiū, kad perkate
-		</h1>
+		{#if data.video}
+			<h1 id="greeting-title" class="mb-2 text-center text-3xl leading-tight font-bold tracking-tight text-white sm:text-4xl xl:text-5xl">
+				Ačiū, kad perkate
+			</h1>
 
-		<p class="mb-8 text-center text-base leading-7 text-red-light sm:text-lg">
-			Atsisiųskite savo sveikinimą
-		</p>
+			<p class="mb-8 text-center text-base leading-7 text-red-light sm:text-lg">
+				Atsisiųskite savo sveikinimą
+			</p>
 
-		<VideoPlayer
-			posterSrc="/images/santa/regular.webp"
-			videoSrc="/videos/santa-demo.mp4"
-			posterAlt="Kalėdų Senelio video sveikinimo peržiūra"
-			videoLabel="Kalėdų Senelio video sveikinimas"
-		/>
+			<VideoPlayer
+				posterSrc={data.video.thumbnailUrl}
+				videoSrc={data.video.videoUrl}
+				posterAlt="Kalėdų Senelio video sveikinimo peržiūra"
+				videoLabel="Kalėdų Senelio video sveikinimas"
+			/>
 
-		<div class="mt-8 flex justify-center">
-			<Button type="button" class="min-w-56 cursor-pointer bg-white px-12 py-4 text-lg font-bold text-red hover:bg-red-light md:min-w-72 md:text-xl">
-				Atsisiųsti
-			</Button>
-		</div>
+			<div class="mt-8 flex justify-center">
+				<Button
+					href={`/sveikinimas/${data.orderId}/atsisiusti`}
+					class="min-w-56 cursor-pointer bg-white px-12 py-4 text-lg font-bold text-red hover:bg-red-light md:min-w-72 md:text-xl"
+				>
+					Atsisiųsti
+				</Button>
+			</div>
+		{:else}
+			<h1 id="greeting-title" class="max-w-3xl text-center text-3xl leading-tight font-bold tracking-tight text-white sm:text-4xl xl:text-5xl">
+				Mums nepavyko rasti jūsų video.
+			</h1>
+
+			<h3 class="mt-4 max-w-3xl text-center text-base leading-7 font-semibold text-red-light sm:text-lg">
+				Jei esate įsitikinę, kad čia turėtų būti jūsų sveikinimas susisiekite:
+				info@kaledenissveikinimas.lt. Laiške pridėkite savo užsakymo numerį
+			</h3>
+		{/if}
 	</section>
 </main>
 
