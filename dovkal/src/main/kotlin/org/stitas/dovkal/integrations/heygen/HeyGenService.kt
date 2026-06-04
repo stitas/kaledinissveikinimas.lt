@@ -8,7 +8,6 @@ import org.stitas.dovkal.exceptions.HeyGenIntegrationException
 import org.stitas.dovkal.integrations.heygen.dto.AvatarVideoEventDataDto
 import org.stitas.dovkal.integrations.heygen.dto.HeyGenWebhookEnvelopeDto
 import org.stitas.dovkal.integrations.heygen.dto.VideoDataDto
-import org.stitas.dovkal.integrations.heygen.dto.VideoDataResponseDto
 import org.stitas.dovkal.models.Order
 import org.stitas.dovkal.properties.HeyGenProperties
 import org.stitas.dovkal.services.OrderService
