@@ -10,6 +10,7 @@
 	} from 'flowbite-svelte';
 
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
+	import { SUPPORT_EMAIL } from '$lib/constants/contact';
 
 	const currentYear = new Date().getFullYear();
 </script>
@@ -146,7 +147,7 @@
 			/>
 
 			<p class="text-sm text-red-light">
-				Susisiekite: info@kaledenissveikinimas.lt
+				Susisiekite: {SUPPORT_EMAIL}
 			</p>
 		</div>
 	</div>

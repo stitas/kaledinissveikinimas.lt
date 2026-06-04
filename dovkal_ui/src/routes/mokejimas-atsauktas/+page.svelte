@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import { CloseCircleSolid } from 'flowbite-svelte-icons';
+	import { SUPPORT_EMAIL } from '$lib/constants/contact';
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@
 
 		<p class="mx-auto mt-4 max-w-xl text-base leading-7 text-gray-600 sm:text-lg">
 			Įvyko klaida atsiskaitant už sveikinimą. Jei iš jūsų nuskaičiavo pinigus kreipkites į
-			info@kaledinissveikinimas.lt
+			{SUPPORT_EMAIL}
 		</p>
 
 		<div class="mt-8 flex justify-center">

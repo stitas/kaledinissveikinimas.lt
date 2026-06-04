@@ -2,6 +2,7 @@
 	import { Button } from 'flowbite-svelte';
 	import type { PageProps } from './$types';
 	import VideoPlayer from '$lib/components/common/VideoPlayer.svelte';
+	import { SUPPORT_EMAIL } from '$lib/constants/contact';
 
 	let { data }: PageProps = $props();
 </script>
@@ -46,7 +47,7 @@
 
 			<h3 class="mt-4 max-w-3xl text-center text-base leading-7 font-semibold text-red-light sm:text-lg">
 				Jei esate įsitikinę, kad čia turėtų būti jūsų sveikinimas susisiekite:
-				info@kaledenissveikinimas.lt. Laiške pridėkite savo užsakymo numerį
+				{SUPPORT_EMAIL}. Laiške pridėkite savo užsakymo numerį
 			</h3>
 		{/if}
 	</section>

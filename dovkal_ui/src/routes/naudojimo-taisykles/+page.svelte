@@ -1,5 +1,6 @@
 <script>
 	import Footer from '$lib/components/common/Footer.svelte';
+	import { SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/constants/contact';
 </script>
 
 <svelte:head>
@@ -42,8 +43,8 @@
 
 				<p class="mt-3">
 					Kilus klausimams, galite susisiekti el. paštu:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 				</p>
 			</section>
@@ -189,8 +190,8 @@
 
 				<p class="mt-3">
 					Jeigu manote, kad turite teisę į pinigų grąžinimą, susisiekite el. paštu:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 					Laiške rekomenduojame nurodyti užsakymo numerį ir trumpai aprašyti problemą.
 				</p>
@@ -201,8 +202,8 @@
 
 				<p class="mt-3">
 					Jeigu video generavimas nepavyksta, vartotojas turėtų susisiekti su mumis el. paštu:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 				</p>
 
@@ -265,8 +266,8 @@
 				<p class="mt-3">
 					Jeigu turite klausimų ar nusiskundimų dėl paslaugos, pirmiausia susisiekite su
 					mumis el. paštu:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 				</p>
 

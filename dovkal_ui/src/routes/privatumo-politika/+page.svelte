@@ -1,5 +1,6 @@
 <script>
 	import Footer from "$lib/components/common/Footer.svelte";
+	import { SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/constants/contact';
 </script>
 
 <svelte:head>
@@ -37,8 +38,8 @@
 
 				<p class="mt-3">
 					Privatumo klausimais galite susisiekti el. paštu:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 				</p>
 			</section>
@@ -150,8 +151,8 @@
 
 				<p class="mt-3">
 					Jeigu norite, kad jūsų duomenys būtų ištrinti, susisiekite su mumis el. paštu:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 				</p>
 			</section>
@@ -197,8 +198,8 @@
 
 				<p class="mt-3">
 					Dėl savo teisių įgyvendinimo rašykite:
-					<a class="font-semibold text-red underline hover:text-red-dark" href="mailto:info@kaledinissveikinimas.lt">
-						info@kaledinissveikinimas.lt
+					<a class="font-semibold text-red underline hover:text-red-dark" href={SUPPORT_EMAIL_HREF}>
+						{SUPPORT_EMAIL}
 					</a>.
 				</p>
 			</section>
