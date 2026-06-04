@@ -77,7 +77,7 @@
 							Pagrindinis
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#create-greeting')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#sukurti-sveikinima')}>
 							Sukurti sveikinimą
 						</FooterLink>
 

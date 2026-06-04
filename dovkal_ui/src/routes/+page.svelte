@@ -133,7 +133,7 @@
 
 				<div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center xl:justify-start">
 					<Button
-						href={resolve('/#create-greeting')}
+						href={resolve('/#sukurti-sveikinima')}
 						size="lg"
 						class="bg-red px-6 py-3 text-base hover:bg-red-dark"
 					>
@@ -173,7 +173,7 @@
 		</div>
 
 		<a
-			href={resolve('/#create-greeting')}
+			href={resolve('/#sukurti-sveikinima')}
 			class="mx-auto mt-8 flex items-center justify-center gap-2 text-xl font-bold text-red transition hover:text-red-dark sm:gap-3 sm:text-2xl md:text-3xl xl:mt-24"
 			aria-label="Eiti į sveikinimo kūrimo formą"
 		>

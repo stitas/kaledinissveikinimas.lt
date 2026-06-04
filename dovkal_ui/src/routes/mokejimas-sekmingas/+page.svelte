@@ -24,7 +24,7 @@
 		</p>
 
 		<div class="mt-8 flex justify-center">
-			<Button href={resolve('/#create-greeting')} class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg">
+			<Button href={resolve('/#sukurti-sveikinima')} class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg">
 				Užsakyti dar vieną
 			</Button>
 		</div>

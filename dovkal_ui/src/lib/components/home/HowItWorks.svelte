@@ -88,7 +88,7 @@
 
 		<div class="mt-14 flex justify-center">
 			<Button
-				href={resolve('/#create-greeting')}
+				href={resolve('/#sukurti-sveikinima')}
 				size="xl"
 				class="bg-white px-6 py-3 text-base font-bold text-red hover:bg-red-light md:text-lg"
 			>

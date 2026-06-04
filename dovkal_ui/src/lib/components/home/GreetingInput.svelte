@@ -32,7 +32,7 @@
 		form: ActionData;
 	};
 
-	let { formId = 'create-greeting', maxCharacters = 1500 }: Props = $props();
+	let { formId = 'sukurti-sveikinima', maxCharacters = 1500 }: Props = $props();
 
 	const templates: SantaTemplate[] = [
 		{
