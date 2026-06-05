@@ -17,7 +17,7 @@
 	const heroVideos: VideoSlide[] = [
 		{
 			id: 'classic-santa',
-			posterSrc: '/images/santa/regular.webp',
+			posterSrc: '/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp',
 			videoSrc: '/videos/santa-demo.mp4',
 			posterAlt: 'Klasikinio Kalėdų Senelio video sveikinimo peržiūra',
 			videoLabel: 'Klasikinio Kalėdų Senelio video sveikinimas',
@@ -25,15 +25,15 @@
 		},
 		{
 			id: 'sleigh-santa',
-			posterSrc: '/images/santa/sleigh.webp',
+			posterSrc: '/images/kaledu-senelis/kaledu-senelis-lauke-prie-rogiu.webp',
 			videoSrc: '/videos/santa-cozy-demo.mp4',
-			posterAlt: 'Kalėdų Senelio kieme prie rogių video sveikinimo peržiūra',
-			videoLabel: 'Kalėdų Senelio kieme prie rogių video sveikinimas',
-			caption: 'Kalėdų Senelio kieme prie rogių sveikinimas draugams.'
+			posterAlt: 'Kalėdų Senelio lauke prie rogių video sveikinimo peržiūra',
+			videoLabel: 'Kalėdų Senelio lauke prie rogių video sveikinimas',
+			caption: 'Kalėdų Senelio lauke prie rogių sveikinimas draugams.'
 		},
 		{
 			id: 'chimney-santa',
-			posterSrc: '/images/santa/chimney.webp',
+			posterSrc: '/images/kaledu-senelis/kaledu-senelis-ant-stogo-prie-kamino.webp',
 			videoSrc: '/videos/santa-modern-demo.mp4',
 			posterAlt: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimo peržiūra',
 			videoLabel: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimas',
@@ -49,26 +49,26 @@
 </script>
 
 <svelte:head>
-	<title>Kalėdinė dovana | Kalėdų Senelio video sveikinimas nuo 6,99€</title>
+	<title>Kalėdinis sveikinimas | Kalėdų Senelio video sveikinimas nuo 6,99€</title>
 
 	<meta
 		name="description"
-		content="Sukurkite personalizuotą Kalėdų Senelio video sveikinimą vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms tik nuo 6,99€"
+		content="Kalėdinis video sveikinimas vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms tik nuo 6,99€"
 	/>
 
 	<meta name="robots" content="index, follow, max-image-preview:large" />
-	<link rel="canonical" href="https://dovanakaledoms.lt/" />
+	<link rel="canonical" href="https://kaledinissveikinimas.lt/" />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="lt_LT" />
 	<meta property="og:site_name" content="Dovana Kalėdoms" />
-	<meta property="og:url" content="https://dovanakaledoms.lt/" />
-	<meta property="og:title" content="Kalėdinė dovana | Unikalus Kalėdų Senelio video sveikinimas" />
+	<meta property="og:url" content="https://kaledinissveikinimas.lt/" />
+	<meta property="og:title" content="Kalėdinis sveikinimas | Unikalus Kalėdų Senelio video sveikinimas" />
 	<meta
 		property="og:description"
-		content="Padovanokite stebuklą! Sukurkite unikalų Kalėdų Senelio video sveikinimą vos per kelias minutes. Nuostabi kalėdinė dovana vaikams, draugams ir kolegoms."
+		content="Kalėdinis video sveikinimas vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms."
 	/>
-	<meta property="og:image" content="https://dovanakaledoms.lt/images/og-preview.jpg" />
+	<meta property="og:image" content="https://kaledinissveikinimas.lt/images/og-preview.jpg" />
 	<meta property="og:image:alt" content="Kalėdų Senelis sveikina personalizuotame video sveikinime" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
@@ -79,15 +79,15 @@
 			"@type": "Product",
 			"name": "Kalėdų Senelio video sveikinimas",
 			"description": "Personalizuotas Kalėdų Senelio video sveikinimas pagal jūsų parašytą tekstą. Originali kalėdinė dovana vaikams, draugams ir kolegoms.",
-			"image": "https://dovanakaledoms.lt/images/og-preview.jpg",
+			"image": "https://kaledinissveikinimas.lt/images/og-preview.jpg",
 			"brand": {
 				"@type": "Brand",
-				"name": "Dovana Kalėdoms"
+				"name": "KaledinisSveikinimas.lt"
 			},
-			"url": "https://dovanakaledoms.lt/",
+			"url": "https://kaledinissveikinimas.lt/",
 			"offers": {
 				"@type": "Offer",
-				"url": "https://dovanakaledoms.lt/",
+				"url": "https://kaledinissveikinimas.lt/",
 				"priceCurrency": "EUR",
 				"price": "6.99",
 				"availability": "https://schema.org/InStock"

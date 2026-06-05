@@ -39,21 +39,21 @@
 			id: 'classic-santa',
 			santaType: 'CLASSIC',
 			name: 'Klasikinis Kalėdų Senelis',
-			image: '/images/santa/regular.webp',
+			image: '/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp',
 			alt: 'Klasikinis Kalėdų Senelis jaukiame kalėdiniame kambaryje'
 		},
 		{
 			id: 'sleigh-santa',
 			santaType: 'SLEIGH',
 			name: 'Kalėdų Senelis lauke prie rogių',
-			image: '/images/santa/sleigh.webp',
+			image: '/images/kaledu-senelis/kaledu-senelis-lauke-prie-rogiu.webp',
 			alt: 'Kalėdų Senelis lauke žiemos fone prie rogių'
 		},
 		{
 			id: 'chimney-santa',
 			santaType: 'CHIMNEY',
 			name: 'Kalėdų Senelis ant stogo prie kamino',
-			image: '/images/santa/chimney.webp',
+			image: '/images/kaledu-senelis/kaledu-senelis-ant-stogo-prie-kamino.webp',
 			alt: 'Kalėdų Senelis lauke ant namo stogo prie kamino'
 		}
 	];

@@ -14,21 +14,21 @@
 		{
 			title: 'Kalėdinė dovana vaikams',
 			description: 'Geras būdas sukurti vaikams jaukią atmosferą Kalėdų belaukiant. Taip pat švelniai pamokyti, paskatinti ar pagirti Kalėdų Senelio vardu.',
-			image: '/images/gift/kids.webp',
+			image: '/images/dovana/vaikas-ziuri-kaledu-senelio-sveikinima.webp',
 			alt: 'Vaikas džiaugiasi žiūrėdamas Kalėdų Senelio video sveikinimą',
 			imageFirst: true
 		},
 		{
 			title: 'Juokingas Kalėdinis sveikinimas draugams',
 			description: 'Sukurkite linksmą Kalėdų Senelio video sveikinimą draugams su vidiniais juokeliais ir neįprastais palinkėjimais, kurį bus lengva pasidalinti į Messenger, WhatsApp, Viber ar kitą grupę.',
-			image: '/images/gift/friends.webp',
+			image: '/images/dovana/draugai-ziuri-kaledini-sveikinima.webp',
 			alt: 'Draugai kartu juokiasi žiūrėdami Kalėdinį video sveikinimą',
 			imageFirst: false
 		},
 		{
 			title: 'Originali dovana kolegoms',
 			description: 'Padėkokite komandai ar kolegoms už darbingus metus kartu. Personalizuotas Kalėdų Senelio video sveikinimas gali tapti linksma metų pabaigos staigmena, kuri tinka tiek mažai komandai, tiek visam skyriui.',
-			image: '/images/gift/colleagues.webp',
+			image: '/images/dovana/kolegos-ziuri-kaledini-sveikinima-ofise.webp',
 			alt: 'Kolegos kartu žiūri Kalėdinį video sveikinimą',
 			imageFirst: true
 		}
