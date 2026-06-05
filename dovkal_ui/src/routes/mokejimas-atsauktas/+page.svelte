@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { Button } from 'flowbite-svelte';
 	import { CloseCircleSolid } from 'flowbite-svelte-icons';
-	import { SUPPORT_EMAIL } from '$lib/constants/contact';
+	import { SUPPORT_EMAIL } from '$lib/utils/constants';
 </script>
 
 <svelte:head>

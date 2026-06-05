@@ -1,6 +1,6 @@
 <script>
 	import Footer from "$lib/components/common/Footer.svelte";
-	import { SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/constants/contact';
+	import { SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/utils/constants';
 </script>
 
 <svelte:head>

@@ -10,7 +10,9 @@
 	import Faq from '$lib/components/home/Faq.svelte';
 	import Footer from '$lib/components/common/Footer.svelte';
 	import ToastNotifications from '$lib/components/common/ToastNotifications.svelte';
+	import TopBanner from '$lib/components/common/TopBanner.svelte';
 	import VideoCarousel, { type VideoSlide } from '$lib/components/common/VideoCarousel.svelte';
+	import { SITE_URL } from '$lib/utils/constants';
 
 	let { form }: PageProps = $props();
 
@@ -41,11 +43,6 @@
 		}
 	];
 
-	let showTopBanner = $state(true);
-
-	function handleScroll() {
-		showTopBanner = window.scrollY < 240;
-	}
 </script>
 
 <svelte:head>
@@ -57,18 +54,18 @@
 	/>
 
 	<meta name="robots" content="index, follow, max-image-preview:large" />
-	<link rel="canonical" href="https://kaledinissveikinimas.lt/" />
+	<link rel="canonical" href="{SITE_URL}" />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="lt_LT" />
-	<meta property="og:site_name" content="Dovana Kalėdoms" />
-	<meta property="og:url" content="https://kaledinissveikinimas.lt/" />
+	<meta property="og:site_name" content="KaledinisSveikinimas.lt" />
+	<meta property="og:url" content="{SITE_URL}" />
 	<meta property="og:title" content="Kalėdinis sveikinimas | Unikalus Kalėdų Senelio video sveikinimas" />
 	<meta
 		property="og:description"
 		content="Kalėdinis video sveikinimas vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms."
 	/>
-	<meta property="og:image" content="https://kaledinissveikinimas.lt/images/og-preview.jpg" />
+	<meta property="og:image" content="{SITE_URL}images/og-preview.jpg" />
 	<meta property="og:image:alt" content="Kalėdų Senelis sveikina personalizuotame video sveikinime" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
@@ -96,17 +93,9 @@
 	</script>
 </svelte:head>
 
-<svelte:window onscroll={handleScroll} />
-
 <ToastNotifications message={form?.error} color="red" />
 
-{#if showTopBanner}
-	<div class="fixed inset-x-0 top-0 z-50 bg-red text-white shadow-md">
-		<div class="mx-auto max-w-7xl px-4 py-2 text-center text-sm leading-5 font-semibold sm:py-3 md:text-base">
-			Kalėdinis sveikinimas tik nuo 6,99 €. Nepraleiskite progos pralinksminti artimuosius!
-		</div>
-	</div>
-{/if}
+<TopBanner text="Kalėdinis sveikinimas tik nuo 6,99 €. Nepraleiskite progos pralinksminti artimuosius!" />
 
 <main class="bg-white">
 	<section

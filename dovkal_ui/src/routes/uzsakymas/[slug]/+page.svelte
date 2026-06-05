@@ -2,7 +2,7 @@
 	import { Button } from 'flowbite-svelte';
 	import type { PageProps } from './$types';
 	import VideoPlayer from '$lib/components/common/VideoPlayer.svelte';
-	import { SUPPORT_EMAIL } from '$lib/constants/contact';
+	import { SUPPORT_EMAIL } from '$lib/utils/constants';
 
 	let { data }: PageProps = $props();
 </script>

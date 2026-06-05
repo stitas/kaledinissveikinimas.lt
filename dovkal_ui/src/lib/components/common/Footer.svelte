@@ -10,7 +10,7 @@
 	} from 'flowbite-svelte';
 
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
-	import { SUPPORT_EMAIL } from '$lib/constants/contact';
+	import { SUPPORT_EMAIL } from '$lib/utils/constants';
 
 	const currentYear = new Date().getFullYear();
 </script>
@@ -100,30 +100,41 @@
 					</FooterLinkGroup>
 				</nav>
 
-				<!-- TODO create articles -->
-				<!-- <nav aria-label="Kalėdinių dovanų kategorijos">
+				<nav aria-label="Kalėdinių dovanų kategorijos">
 					<h2 class="mb-6 text-sm font-bold uppercase tracking-wide text-red-light">
 						Kam tinka?
 					</h2>
 
 					<FooterLinkGroup>
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog/kaledine-dovana-vaikams')}>
-							Kalėdinė dovana vaikams
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/')}>
+							Visi kalėdiniai sveikinimai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog/kaledine-dovana-draugams')}>
-							Dovana draugams
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-vaikams/')}>
+							Kalėdinis sveikinimas vaikams
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog/kaledine-dovana-kolegoms')}>
-							Dovana kolegoms
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-kolegoms/')}>
+							Kalėdinis sveikinimas kolegoms
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog/originalios-kaledines-dovanos')}>
-							Originalios kalėdinės dovanos
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-mokytojai/')}>
+							Kalėdinis sveikinimas mokytojai
+						</FooterLink>
+
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-draugams/')}>
+							Kalėdinis sveikinimas draugams
+						</FooterLink>
+
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-mamai/')}>
+							Kalėdinis sveikinimas mamai
+						</FooterLink>
+
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-tevams/')}>
+							Kalėdinis sveikinimas tėvams
 						</FooterLink>
 					</FooterLinkGroup>
-				</nav> -->
+				</nav>
 
 				<nav aria-label="Teisinė informacija">
 					<h2 class="mb-6 text-sm font-bold uppercase tracking-wide text-red-light">
