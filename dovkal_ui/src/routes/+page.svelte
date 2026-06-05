@@ -20,7 +20,7 @@
 		{
 			id: 'classic-santa',
 			posterSrc: '/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp',
-			videoSrc: '/videos/santa-demo.mp4',
+			videoSrc: '/videos/kaledu-senelio-video-sveikinimas-is-namu.mp4',
 			posterAlt: 'Klasikinio Kalėdų Senelio video sveikinimo peržiūra',
 			videoLabel: 'Klasikinio Kalėdų Senelio video sveikinimas',
 			caption: 'Klasikinis Kalėdų Senelio sveikinimas vaikams.'
