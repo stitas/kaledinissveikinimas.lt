@@ -39,7 +39,7 @@ email:
   from-name: ${EMAIL_FROM_NAME}
   from: ${EMAIL_FROM}
   to: ${EMAIL_TO}
-  frontend-download-url: https://kaledinissveikinimas.lt/sveikinimas/%s
+  frontend-download-url: https://kaledinissveikinimas.lt/uzsakymas/%s
 
 stripe:
   secret: ${STRIPE_SECRET}

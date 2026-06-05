@@ -34,7 +34,7 @@
 
 			<div class="mt-8 flex justify-center">
 				<Button
-					href={`/sveikinimas/${data.orderId}/atsisiusti`}
+					href={`/uzsakymas/${data.orderId}/atsisiusti`}
 					class="min-w-56 cursor-pointer bg-white px-12 py-4 text-lg font-bold text-red hover:bg-red-light md:min-w-72 md:text-xl"
 				>
 					Atsisiųsti
