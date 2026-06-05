@@ -22,6 +22,7 @@
 					autoplay
 					preload="metadata"
 					aria-label={videoLabel}
+					data-analytics-label={videoLabel || 'Video peržiūra'}
 				>
 					<source src={videoSrc} type="video/mp4" />
 					Jūsų naršyklė nepalaiko video atkūrimo.
@@ -31,6 +32,7 @@
 					type="button"
 					class="group relative block w-full"
 					aria-label="Peržiūrėti pavyzdinį Kalėdų Senelio video"
+					data-analytics-label={videoLabel || 'Peržiūrėti video'}
 					onclick={() => (showVideo = true)}
 				>
 					<img

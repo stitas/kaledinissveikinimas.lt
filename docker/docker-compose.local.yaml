@@ -78,9 +78,41 @@ services:
       - garage_meta:/var/lib/garage/meta
       - garage_data:/var/lib/garage/data
 
+  umami:
+    image: docker.umami.is/umami-software/umami:postgresql-latest
+    env_file:
+      - ../.env
+    environment:
+      DATABASE_URL: postgresql://${UMAMI_POSTGRES_USER}:${UMAMI_POSTGRES_PASSWORD}@umami-postgres:5432/${UMAMI_POSTGRES_DB}
+      DATABASE_TYPE: postgresql
+      APP_SECRET: ${UMAMI_APP_SECRET}
+      DISABLE_TELEMETRY: 1
+    ports:
+      - "127.0.0.1:${UMAMI_PORT:-3001}:3000"
+    depends_on:
+      umami-postgres:
+        condition: service_healthy
+
+  umami-postgres:
+    image: postgres:17-alpine
+    env_file:
+      - ../.env
+    environment:
+      POSTGRES_DB: ${UMAMI_POSTGRES_DB}
+      POSTGRES_USER: ${UMAMI_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${UMAMI_POSTGRES_PASSWORD}
+    volumes:
+      - umami_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
 volumes:
   ui_node_modules:
   backend_gradle_cache:
   postgres_data:
   garage_meta:
   garage_data:
+  umami_postgres_data:
