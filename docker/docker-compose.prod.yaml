@@ -147,7 +147,6 @@ networks:
   data:
     internal: true
   stats:
-    internal: true
 
 volumes:
   postgres_data:
