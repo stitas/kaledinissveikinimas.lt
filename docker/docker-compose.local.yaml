@@ -3,7 +3,7 @@ services:
     image: node:22-alpine
     working_dir: /app
     env_file:
-      - ../.env
+      - ../.env.local
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 3000"
     ports:
       - "127.0.0.1:3000:3000"
@@ -17,23 +17,12 @@ services:
     image: eclipse-temurin:21-jdk
     working_dir: /app
     env_file:
-      - ../.env
+      - ../.env.local
     environment:
       SERVER_PORT: 8080
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
-      S3_ENDPOINT: http://garage:9000
-      S3_BUCKET: ${S3_BUCKET}
-      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
-      S3_SECRET_KEY: ${S3_SECRET_KEY}
-      STRIPE_SECRET: ${STRIPE_SECRET}
-      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET} 
-      STRIPE_GREETING_375_PRICE_ID: ${STRIPE_GREETING_375_PRICE_ID}
-      STRIPE_GREETING_750_PRICE_ID: ${STRIPE_GREETING_750_PRICE_ID}
-      STRIPE_GREETING_1125_PRICE_ID: ${STRIPE_GREETING_1125_PRICE_ID}
-      STRIPE_GREETING_1500_PRICE_ID: ${STRIPE_GREETING_1500_PRICE_ID}
-      STRIPE_SUCCESS_URL: ${STRIPE_SUCCESS_URL}
     command: ./gradlew bootRun --no-daemon
     ports:
       - "127.0.0.1:8080:8080"
@@ -43,13 +32,11 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-      garage:
-        condition: service_started
 
   postgres:
     image: postgres:17-alpine
     env_file:
-      - ../.env
+      - ../.env.local
     ports:
       - "127.0.0.1:54321:5432"
     volumes:
@@ -61,27 +48,10 @@ services:
       timeout: 5s
       retries: 10
 
-  garage:
-    image: dxflrs/garage:v2.3.0
-    env_file:
-      - ../.env
-    environment:
-      GARAGE_RPC_SECRET: ${GARAGE_RPC_SECRET}
-      GARAGE_DEFAULT_ACCESS_KEY: ${S3_ACCESS_KEY}
-      GARAGE_DEFAULT_SECRET_KEY: ${S3_SECRET_KEY}
-      GARAGE_DEFAULT_BUCKET: ${S3_BUCKET}
-    command: /garage server --single-node --default-access-key --default-bucket
-    expose:
-      - "9000"
-    volumes:
-      - ./garage.toml:/etc/garage.toml:ro
-      - garage_meta:/var/lib/garage/meta
-      - garage_data:/var/lib/garage/data
-
   umami:
     image: docker.umami.is/umami-software/umami:postgresql-latest
     env_file:
-      - ../.env
+      - ../.env.local
     environment:
       DATABASE_URL: postgresql://${UMAMI_POSTGRES_USER}:${UMAMI_POSTGRES_PASSWORD}@umami-postgres:5432/${UMAMI_POSTGRES_DB}
       DATABASE_TYPE: postgresql
@@ -96,7 +66,7 @@ services:
   umami-postgres:
     image: postgres:17-alpine
     env_file:
-      - ../.env
+      - ../.env.local
     environment:
       POSTGRES_DB: ${UMAMI_POSTGRES_DB}
       POSTGRES_USER: ${UMAMI_POSTGRES_USER}
@@ -113,6 +83,4 @@ volumes:
   ui_node_modules:
   backend_gradle_cache:
   postgres_data:
-  garage_meta:
-  garage_data:
   umami_postgres_data:
