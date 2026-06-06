@@ -3,7 +3,6 @@ set -euo pipefail
 
 ENV_FILE="../.env"
 COMPOSE_FILE="docker/docker-compose.prod.yaml"
-BRANCH="master"
 
 echo "*** PULLING CODE ***"
 git fetch origin master
