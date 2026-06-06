@@ -20,7 +20,7 @@
 		{
 			id: 'classic-santa',
 			posterSrc: '/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp',
-			videoSrc: '/videos/kaledu-senelio-video-sveikinimas-is-namu.mp4',
+			videoSrc: '/media/videos/kaledu-senelio-video-sveikinimas-is-namu.mp4',
 			posterAlt: 'Klasikinio Kalėdų Senelio video sveikinimo peržiūra',
 			videoLabel: 'Klasikinio Kalėdų Senelio video sveikinimas',
 			caption: 'Klasikinis Kalėdų Senelio sveikinimas vaikams.'
@@ -28,7 +28,7 @@
 		{
 			id: 'sleigh-santa',
 			posterSrc: '/images/kaledu-senelis/kaledu-senelis-lauke-prie-rogiu.webp',
-			videoSrc: '/videos/santa-cozy-demo.mp4',
+			videoSrc: '/media/videos/kaledu-senelio-video-sveikinimas-lauke-prie-rogiu.mp4',
 			posterAlt: 'Kalėdų Senelio lauke prie rogių video sveikinimo peržiūra',
 			videoLabel: 'Kalėdų Senelio lauke prie rogių video sveikinimas',
 			caption: 'Kalėdų Senelio lauke prie rogių sveikinimas draugams.'
@@ -36,7 +36,7 @@
 		{
 			id: 'chimney-santa',
 			posterSrc: '/images/kaledu-senelis/kaledu-senelis-ant-stogo-prie-kamino.webp',
-			videoSrc: '/videos/santa-modern-demo.mp4',
+			videoSrc: '/media/videos/kaledu-senelio-video-sveikinimas-ant-stogo-prie-kamino.mp4',
 			posterAlt: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimo peržiūra',
 			videoLabel: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimas',
 			caption: 'Kalėdų Senelio ant namo stogo prie kamino video sveikinimas kolegoms.'
