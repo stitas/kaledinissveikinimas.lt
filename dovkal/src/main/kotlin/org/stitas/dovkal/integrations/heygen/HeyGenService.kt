@@ -45,11 +45,7 @@ class HeyGenService(
     fun handleWebhook(
         payload: String,
         heyGenSignature: String?,
-        heyGenTimestamp: String?,
-        heyGenEventId: String?,
     ) {
-        log.info("HeyGen webhook received. eventId={}, timestamp={}", heyGenEventId, heyGenTimestamp)
-
         if (heyGenSignature.isNullOrBlank()) {
             log.error("HeyGen webhook rejected because signature header is missing")
             throw HeyGenIntegrationException(message = "Missing HeyGen webhook signature", httpStatus = HttpStatus.UNAUTHORIZED)

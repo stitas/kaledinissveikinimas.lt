@@ -25,21 +25,15 @@ class VideoController(
         @RequestBody payload: String,
         @RequestHeader headers: HttpHeaders,
     ): ResponseEntity<Void> {
-        log.info("HeyGen webhook received. headerNames={}", headers.headerNames())
-
+        // Many cases for safety as docs are misleading
         val heyGenSignature =
             headers.getFirst("Heygen-Signature")
                 ?: headers.getFirst("X-Heygen-Signature")
                 ?: headers.getFirst("signature")
 
-        val heyGenTimestamp = headers.getFirst("Heygen-Timestamp")
-        val heyGenEventId = headers.getFirst("Heygen-Event-Id")
-
         heyGenService.handleWebhook(
             payload = payload,
             heyGenSignature = heyGenSignature,
-            heyGenTimestamp = heyGenTimestamp,
-            heyGenEventId = heyGenEventId,
         )
 
         return ResponseEntity.ok().build()
