@@ -1,5 +1,7 @@
 package org.stitas.dovkal.controllers.video
 
+import org.slf4j.LoggerFactory
+import org.springframework.http.HttpHeaders
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -21,9 +23,24 @@ class VideoController(
     @PostMapping("/hook")
     fun heyGenWebhook(
         @RequestBody payload: String,
-        @RequestHeader("Heygen-Signature") heyGenSignature: String,
+        @RequestHeader headers: HttpHeaders,
     ): ResponseEntity<Void> {
-        heyGenService.handleWebhook(payload, heyGenSignature)
+        log.info("HeyGen webhook received. headerNames={}", headers.headerNames())
+
+        val heyGenSignature =
+            headers.getFirst("Heygen-Signature")
+                ?: headers.getFirst("X-Heygen-Signature")
+
+        val heyGenTimestamp = headers.getFirst("Heygen-Timestamp")
+        val heyGenEventId = headers.getFirst("Heygen-Event-Id")
+
+        heyGenService.handleWebhook(
+            payload = payload,
+            heyGenSignature = heyGenSignature,
+            heyGenTimestamp = heyGenTimestamp,
+            heyGenEventId = heyGenEventId,
+        )
+
         return ResponseEntity.ok().build()
     }
 
@@ -32,4 +49,7 @@ class VideoController(
         return heyGenService.getVideoUrl(orderId)
     }
 
+    companion object {
+        private val log = LoggerFactory.getLogger(VideoController::class.java)
+    }
 }

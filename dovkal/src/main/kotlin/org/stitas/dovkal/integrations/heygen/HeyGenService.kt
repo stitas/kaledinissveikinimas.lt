@@ -42,12 +42,23 @@ class HeyGenService(
         return heyGenApiClient.getVideoUrl(videoId)
     }
 
-    fun handleWebhook(payload: String, heyGenSignature: String) {
-        log.info("HeyGen webhook received. Validating...")
+    fun handleWebhook(
+        payload: String,
+        heyGenSignature: String?,
+        heyGenTimestamp: String?,
+        heyGenEventId: String?,
+    ) {
+        log.info("HeyGen webhook received. eventId={}, timestamp={}", heyGenEventId, heyGenTimestamp)
+
+        if (heyGenSignature.isNullOrBlank()) {
+            log.error("HeyGen webhook rejected because signature header is missing")
+            throw HeyGenIntegrationException(message = "Missing HeyGen webhook signature", httpStatus = HttpStatus.UNAUTHORIZED)
+        }
+
         validateSignature(payload, heyGenSignature)
         log.info("HeyGen webhook signature verified successfully")
 
-        val envelope = objectMapper.readValue(payload,HeyGenWebhookEnvelopeDto::class.java)
+        val envelope = objectMapper.readValue(payload, HeyGenWebhookEnvelopeDto::class.java)
 
         when (envelope.eventType) {
             "avatar_video.success" -> {
