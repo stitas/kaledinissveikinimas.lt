@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 </script>
 
@@ -19,7 +19,7 @@
 		</p>
 
 		<div class="mt-8 flex justify-center">
-			<Button href={resolve('/')} class="bg-white px-8 py-3 text-base font-bold text-red hover:bg-red-light sm:text-lg">
+			<Button href={resolvePath('/')} class="bg-white px-8 py-3 text-base font-bold text-red hover:bg-red-light sm:text-lg">
 				Grįžti į pradžią
 			</Button>
 		</div>

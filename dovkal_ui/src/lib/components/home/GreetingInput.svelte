@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 	import InfoTooltip from '$lib/components/common/InfoTooltip.svelte';
 	import type { Locale, SantaType } from '$lib/server/payment';
@@ -104,10 +104,10 @@
 	let progressPercent = $derived(Math.min((characterCount / maxCharacters) * 100, 100));
 
 	let currentPrice = $derived.by(() => {
-		if (characterCount < 375) return '6,99';
-		if (characterCount < 750) return '7,99';
-		if (characterCount < 1125) return '8,99';
-		return '9,99';
+		if (characterCount < 375) return '8,99';
+		if (characterCount < 750) return '10,99';
+		if (characterCount < 1125) return '12,99';
+		return '14,99';
 	});
 
 	let canSubmit = $derived(
@@ -307,7 +307,7 @@
 			/>
 			<span class="inline">
 				Susipažinau ir sutinku su
-				<a href={resolve('/naudojimo-taisykles')} class="font-semibold text-red underline-offset-4 hover:underline">
+				<a href={resolvePath('/naudojimo-taisykles')} class="font-semibold text-red underline-offset-4 hover:underline">
 					naudojimo taisyklėmis
 				</a>.
 			</span>

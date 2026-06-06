@@ -1,5 +1,5 @@
 <script>
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 </script>
 
@@ -88,7 +88,7 @@
 
 		<div class="mt-14 flex justify-center">
 			<Button
-				href={resolve('/#sukurti-sveikinima')}
+				href={resolvePath('/#sukurti-sveikinima')}
 				size="xl"
 				class="bg-white px-6 py-3 text-base font-bold text-red hover:bg-red-light md:text-lg"
 			>

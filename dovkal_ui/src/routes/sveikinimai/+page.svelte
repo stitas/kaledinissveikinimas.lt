@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 	import Footer from '$lib/components/common/Footer.svelte';
 	import TopBanner from '$lib/components/common/TopBanner.svelte';
@@ -33,7 +33,7 @@
 </svelte:head>
 
 <TopBanner
-	text="Kalėdinis sveikinimas tik nuo 6,99 €. Nepraleiskite progos pralinksminti artimuosius!"
+	text="Kalėdinis sveikinimas tik nuo 8,99 €. Nepraleiskite progos pralinksminti artimuosius!"
 	homeLinkText="Sužinokite daugiau"
 	height={120}
 />
@@ -58,7 +58,7 @@
 		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each pages as page (page.slug)}
 				<a
-					href={resolve(`/sveikinimai/${page.slug}/`)}
+					href={resolvePath(`/sveikinimai/${page.slug}/`)}
 					class="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-red-light hover:shadow-lg"
 				>
 					<h2 class="text-xl font-bold tracking-tight text-gray-950 group-hover:text-red">
@@ -90,7 +90,7 @@
 
 		<div class="mt-7">
 			<Button
-				href={resolve('/#sukurti-sveikinima')}
+				href={resolvePath('/#sukurti-sveikinima')}
 				class="bg-red px-12 py-4 text-lg font-bold hover:bg-red-dark sm:min-w-72 sm:text-xl"
 			>
 				Sukurti sveikinimą

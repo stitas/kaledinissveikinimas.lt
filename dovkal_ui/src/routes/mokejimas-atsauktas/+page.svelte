@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 	import { CloseCircleSolid } from 'flowbite-svelte-icons';
 	import { SUPPORT_EMAIL } from '$lib/utils/constants';
@@ -26,7 +26,7 @@
 		</p>
 
 		<div class="mt-8 flex justify-center">
-			<Button href={resolve('/#sukurti-sveikinima')} class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg">
+			<Button href={resolvePath('/#sukurti-sveikinima')} class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg">
 				Bandykite dar kartą
 			</Button>
 		</div>

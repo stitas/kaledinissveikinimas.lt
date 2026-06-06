@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 
 	import {
 		Footer,
@@ -20,7 +20,7 @@
 		<div class="mx-auto max-w-496 px-6 py-14">
 			<div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
 				<div>
-					<a href={resolve('/')} class="text-3xl font-bold tracking-tight text-white">
+					<a href={resolvePath('/')} class="text-3xl font-bold tracking-tight text-white">
 						KaledinisSveikinimas.lt
 					</a>
 
@@ -73,28 +73,28 @@
 					</h2>
 
 					<FooterLinkGroup>
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/')}>
 							Pagrindinis
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#sukurti-sveikinima')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/#sukurti-sveikinima')}>
 							Sukurti sveikinimą
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#kaip-tai-veikia')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/#kaip-tai-veikia')}>
 							Kaip tai veikia?
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#kam-tinka-si-dovana')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/#kam-tinka-si-dovana')}>
 							Kam tinka ši dovana?
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolve('/#duk')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/#duk')}>
 							DUK
 						</FooterLink>
 
 						<!-- TODO add blog -->
-						<!-- <FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/blog')}>
+						<!-- <FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/blog')}>
 							Blogas
 						</FooterLink> -->
 					</FooterLinkGroup>
@@ -106,31 +106,31 @@
 					</h2>
 
 					<FooterLinkGroup>
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/')}>
 							Visi kalėdiniai sveikinimai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-vaikams/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-vaikams/')}>
 							Kalėdinis sveikinimas vaikams
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-kolegoms/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-kolegoms/')}>
 							Kalėdinis sveikinimas kolegoms
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-mokytojai/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-mokytojai/')}>
 							Kalėdinis sveikinimas mokytojai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-draugams/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-draugams/')}>
 							Kalėdinis sveikinimas draugams
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-mamai/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-mamai/')}>
 							Kalėdinis sveikinimas mamai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/sveikinimai/kaledinis-sveikinimas-tevams/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-tevams/')}>
 							Kalėdinis sveikinimas tėvams
 						</FooterLink>
 					</FooterLinkGroup>
@@ -142,11 +142,11 @@
 					</h2>
 
 					<FooterLinkGroup>
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/privatumo-politika')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/privatumo-politika')}>
 							Privatumo politika
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={(resolve as (path: string) => string)('/naudojimo-taisykles')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/naudojimo-taisykles')}>
 							Naudojimosi taisyklės
 						</FooterLink>
 					</FooterLinkGroup>
@@ -159,7 +159,7 @@
 		<div class="mx-auto flex max-w-496 flex-col gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
 			<FooterCopyright
 				class="text-sm text-red-light!"
-				href={resolve('/')}
+				href={resolvePath('/')}
 				by="KaledinisSveikinimas.lt"
 				year={currentYear}
 				copyrightMessage="Visos teisės saugomos"

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 	import { CheckCircleSolid } from 'flowbite-svelte-icons';
 </script>
@@ -24,7 +24,7 @@
 		</p>
 
 		<div class="mt-8 flex justify-center">
-			<Button href={resolve('/#sukurti-sveikinima')} class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg">
+			<Button href={resolvePath('/#sukurti-sveikinima')} class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg">
 				Užsakyti dar vieną
 			</Button>
 		</div>

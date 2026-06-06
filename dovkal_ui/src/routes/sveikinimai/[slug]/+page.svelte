@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 	import Footer from '$lib/components/common/Footer.svelte';
 	import TopBanner from '$lib/components/common/TopBanner.svelte';
@@ -33,7 +33,7 @@
 </svelte:head>
 
 <TopBanner
-	text="Kalėdinis sveikinimas tik nuo 6,99 €. Nepraleiskite progos pralinksminti artimuosius!"
+	text="Kalėdinis sveikinimas tik nuo 8,99 €. Nepraleiskite progos pralinksminti artimuosius!"
 	homeLinkText="Sužinokite daugiau"
 	height={125}
 />
@@ -55,7 +55,7 @@
 
 			<div class="mt-7">
 				<Button
-					href={resolve('/#sukurti-sveikinima')}
+					href={resolvePath('/#sukurti-sveikinima')}
 					class="bg-red px-8 py-3 text-base font-bold hover:bg-red-dark sm:text-lg"
 				>
 					Sukurti sveikinimą dabar
@@ -209,7 +209,7 @@
 
 	<section class="px-4 py-12 text-center sm:px-6 lg:px-8">
 		<Button
-			href={resolve('/#sukurti-sveikinima')}
+			href={resolvePath('/#sukurti-sveikinima')}
 			class="bg-red px-12 py-4 text-lg font-bold hover:bg-red-dark sm:min-w-72 sm:text-xl"
 		>
 			Sukurti sveikinimą

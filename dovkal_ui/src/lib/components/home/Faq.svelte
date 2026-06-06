@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 
 	type FaqItem = {
@@ -14,7 +14,7 @@
 		},
 		{
 			question: 'Kiek kainuoja personalizuotas Kalėdų Senelio video?',
-			answer: 'Kaina priklauso nuo sveikinimo teksto ilgio. Trumpiausias Kalėdų Senelio video sveikinimas kainuoja nuo 6,99 €, o ilgesni tekstai kainuoja daugiau pagal simbolių kiekį.'
+			answer: 'Kaina priklauso nuo sveikinimo teksto ilgio. Trumpiausias Kalėdų Senelio video sveikinimas kainuoja nuo 8,99 €, o ilgesni tekstai kainuoja daugiau pagal simbolių kiekį.'
 		},
 		{
 			question: 'Ar galiu parašyti sveikinimą lietuviškai?',
@@ -85,7 +85,7 @@
 
 		<div class="mt-14 flex justify-center">
 			<Button
-				href={resolve('/#sukurti-sveikinima')}
+				href={resolvePath('/#sukurti-sveikinima')}
 				size="xl"
 				class="bg-red px-6 py-3 text-base font-bold hover:bg-red-dark md:text-lg"
 			>

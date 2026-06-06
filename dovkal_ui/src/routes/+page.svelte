@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 	import { TextSizeOutline, VolumeUpOutline, ClockOutline } from 'flowbite-svelte-icons';
 	import type { PageProps } from './$types';
@@ -46,11 +46,11 @@
 </script>
 
 <svelte:head>
-	<title>Kalėdinis sveikinimas | Kalėdų Senelio video sveikinimas nuo 6,99€</title>
+	<title>Kalėdinis sveikinimas | Kalėdų Senelio video sveikinimas nuo 8,99€</title>
 
 	<meta
 		name="description"
-		content="Kalėdinis video sveikinimas vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms tik nuo 6,99€"
+		content="Kalėdinis video sveikinimas vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms tik nuo 8,99€"
 	/>
 
 	<meta name="robots" content="index, follow, max-image-preview:large" />
@@ -86,7 +86,7 @@
 				"@type": "Offer",
 				"url": "https://kaledinissveikinimas.lt/",
 				"priceCurrency": "EUR",
-				"price": "6.99",
+				"price": "8.99",
 				"availability": "https://schema.org/InStock"
 			}
 		}
@@ -95,7 +95,7 @@
 
 <ToastNotifications message={form?.error} color="red" />
 
-<TopBanner text="Kalėdinis sveikinimas tik nuo 6,99 €. Nepraleiskite progos pralinksminti artimuosius!" />
+<TopBanner text="Kalėdinis sveikinimas tik nuo 8,99 €. Nepraleiskite progos pralinksminti artimuosius!" />
 
 <main class="bg-white">
 	<section
@@ -122,7 +122,7 @@
 
 				<div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center xl:justify-start">
 					<Button
-						href={resolve('/#sukurti-sveikinima')}
+						href={resolvePath('/#sukurti-sveikinima')}
 						size="lg"
 						class="bg-red px-6 py-3 text-base hover:bg-red-dark"
 					>
@@ -130,7 +130,7 @@
 					</Button>
 
 					<p class="text-sm text-gray-600 sm:text-base">
-						Kaina nuo <span class="font-semibold text-gray-950">6,99 €</span>
+						Kaina nuo <span class="font-semibold text-gray-950">8,99 €</span>
 					</p>
 				</div>
 
@@ -162,7 +162,7 @@
 		</div>
 
 		<a
-			href={resolve('/#sukurti-sveikinima')}
+			href={resolvePath('/#sukurti-sveikinima')}
 			class="mx-auto mt-8 flex items-center justify-center gap-2 text-xl font-bold text-red transition hover:text-red-dark sm:gap-3 sm:text-2xl md:text-3xl xl:mt-24"
 			aria-label="Eiti į sveikinimo kūrimo formą"
 		>

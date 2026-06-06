@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 	import { Button } from 'flowbite-svelte';
 
 	type GiftIdea = {
@@ -77,7 +77,7 @@
 
 						<div class="mt-6 flex justify-center lg:justify-start">
 							<Button
-								href={resolve('/#sukurti-sveikinima')}
+								href={resolvePath('/#sukurti-sveikinima')}
 								size="lg"
 								class="bg-red px-6 py-3 text-base font-bold hover:bg-red-dark md:text-lg"
 							>

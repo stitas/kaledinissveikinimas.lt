@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/utils/utils';
 
 	type Props = {
 		text: string;
@@ -23,7 +23,7 @@
 		<div class="mx-auto max-w-7xl px-4 py-2 text-center text-sm leading-5 font-semibold sm:py-3 md:text-base">
 			{text}
 			{#if homeLinkText}
-				<a href={resolve('/')} class="ml-2 inline-block text-white underline underline-offset-4 hover:text-red-light">
+				<a href={resolvePath('/')} class="ml-2 inline-block text-white underline underline-offset-4 hover:text-red-light">
 					{homeLinkText}
 				</a>
 			{/if}
