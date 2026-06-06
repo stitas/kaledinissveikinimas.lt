@@ -154,7 +154,7 @@
 				{#each templates as template (template.id)}
 					<button
 						type="button"
-						class={`relative overflow-hidden rounded-xl border-3 transition ${
+							class={`relative cursor-pointer overflow-hidden rounded-xl border-3 transition ${
 							selectedTemplateId === template.id
 								? 'border-red bg-red-light'
 								: 'border-transparent hover:border-red-light'
@@ -203,7 +203,7 @@
 						name="locale"
 						bind:value={selectedLanguage}
 						required
-						class="w-36 rounded-xl border border-gray-300 bg-gray-50 py-2 pr-9 pl-4 text-sm font-medium text-gray-700 focus:border-red focus:ring-red sm:w-40 sm:text-base"
+							class="w-36 cursor-pointer rounded-xl border border-gray-300 bg-gray-50 py-2 pr-9 pl-4 text-sm font-medium text-gray-700 focus:border-red focus:ring-red sm:w-40 sm:text-base"
 					>
 						<option value='LT'>🇱🇹 Lietuvių</option>
 						<option value='PL'>🇵🇱 Lenkų</option>
@@ -228,7 +228,7 @@
 				{#each greetingTemplates as template (template.id)}
 					<button
 						type="button"
-						class="rounded-full border border-red px-4 py-1.5 text-sm font-semibold text-red transition hover:bg-red hover:text-white"
+							class="cursor-pointer rounded-full border border-red px-4 py-1.5 text-sm font-semibold text-red transition hover:bg-red hover:text-white"
 						onclick={() => applyGreetingTemplate(template.text)}
 					>
 						{template.label}
@@ -296,14 +296,14 @@
 			/>
 		</div>
 
-		<label class="flex items-center gap-3 text-sm leading-6 text-gray-700 sm:text-base">
+		<label class="flex cursor-pointer items-center gap-3 text-sm leading-6 text-gray-700 sm:text-base">
 			<input
 				type="checkbox"
 				name="hasAcceptedTerms"
 				value="true"
 				bind:checked={hasAcceptedTerms}
 				required
-				class="h-5 w-5 shrink-0 rounded border-gray-300 text-red focus:ring-red"
+				class="h-5 w-5 shrink-0 cursor-pointer rounded border-gray-300 text-red focus:ring-red"
 			/>
 			<span class="inline">
 				Susipažinau ir sutinku su
