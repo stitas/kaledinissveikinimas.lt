@@ -30,6 +30,7 @@ class VideoController(
         val heyGenSignature =
             headers.getFirst("Heygen-Signature")
                 ?: headers.getFirst("X-Heygen-Signature")
+                ?: headers.getFirst("signature")
 
         val heyGenTimestamp = headers.getFirst("Heygen-Timestamp")
         val heyGenEventId = headers.getFirst("Heygen-Event-Id")
