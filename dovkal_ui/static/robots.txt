@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /uzsakymas/
-Sitemap: kaledinissveikinimas.lt/sitemap.xml
+Sitemap: https://kaledinissveikinimas.lt/sitemap.xml
