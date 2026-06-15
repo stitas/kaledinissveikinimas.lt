@@ -9,7 +9,7 @@
 	let { data }: { data: PageData } = $props();
 
 	const pages = $derived(data.pages);
-	const canonicalUrl = `${SITE_URL}/sveikinimai/`;
+	const canonicalUrl = `${SITE_URL}sveikinimai/`;
 </script>
 
 <svelte:head>
