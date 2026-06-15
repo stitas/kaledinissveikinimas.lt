@@ -1,21 +1,22 @@
 <script>
 	import Footer from '$lib/components/common/Footer.svelte';
-	import { SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/utils/constants';
+	import { SITE_NAME, SITE_URL, SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/utils/constants';
 </script>
 
 <svelte:head>
-	<title>Naudojimo taisyklės | KaledinisSveikinimas.lt</title>
+	<title>Naudojimo taisyklės | {SITE_NAME}</title>
 	<meta
 		name="description"
-		content="KaledinisSveikinimas.lt naudojimo taisyklės: užsakymo, mokėjimo, video generavimo, grąžinimo ir atsakomybės sąlygos."
+		content="{SITE_NAME} naudojimo taisyklės: užsakymo, mokėjimo, video generavimo, grąžinimo ir atsakomybės sąlygos."
 	/>
 	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href={`${SITE_URL}/naudojimo-taisykles`} />
 </svelte:head>
 
 <main class="bg-white">
 	<section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
 		<p class="mb-3 text-sm font-semibold tracking-wide text-red uppercase">
-			KaledinisSveikinimas.lt
+			{SITE_NAME}
 		</p>
 
 		<h1 class="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl">
@@ -31,7 +32,7 @@
 				<h2 class="text-xl font-bold text-gray-950">1. Bendra informacija</h2>
 
 				<p class="mt-3">
-					Šios naudojimo taisyklės nustato <strong>KaledinisSveikinimas.lt</strong>
+					Šios naudojimo taisyklės nustato <strong>{SITE_NAME}</strong>
 					svetainės naudojimo ir personalizuoto Kalėdų Senelio video sveikinimo užsakymo
 					sąlygas.
 				</p>
@@ -53,7 +54,7 @@
 				<h2 class="text-xl font-bold text-gray-950">2. Paslaugos aprašymas</h2>
 
 				<p class="mt-3">
-					KaledinisSveikinimas.lt suteikia galimybę užsisakyti DI sugeneruotą Kalėdų
+					{SITE_NAME} suteikia galimybę užsisakyti DI sugeneruotą Kalėdų
 					Senelio video sveikinimą pagal vartotojo pateiktą tekstą.
 				</p>
 
@@ -232,13 +233,13 @@
 				<h2 class="text-xl font-bold text-gray-950">13. Atsakomybės ribojimas</h2>
 
 				<p class="mt-3">
-					KaledinisSveikinimas.lt nėra atsakinga už nuostolius, atsiradusius dėl vartotojo
+					{SITE_NAME} nėra atsakinga už nuostolius, atsiradusius dėl vartotojo
 					pateiktų neteisingų duomenų, neteisingo el. pašto adreso, individualios video
 					nuorodos pasidalinimo su kitais asmenimis ar netinkamo sugeneruoto video naudojimo.
 				</p>
 
 				<p class="mt-3">
-					KaledinisSveikinimas.lt taip pat nėra atsakinga už trečiųjų šalių paslaugų
+					{SITE_NAME} taip pat nėra atsakinga už trečiųjų šalių paslaugų
 					sutrikimus, jeigu dėl jų laikinai vėluoja mokėjimo apdorojimas, video generavimas,
 					el. laiškų siuntimas ar video pasiekimas.
 				</p>

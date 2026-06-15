@@ -106,31 +106,31 @@
 					</h2>
 
 					<FooterLinkGroup>
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai')}>
 							Visi kalėdiniai sveikinimai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-vaikams/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-vaikams')}>
 							Kalėdinis sveikinimas vaikams
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-kolegoms/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-kolegoms')}>
 							Kalėdinis sveikinimas kolegoms
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-mokytojai/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-mokytojai')}>
 							Kalėdinis sveikinimas mokytojai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-draugams/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-draugams')}>
 							Kalėdinis sveikinimas draugams
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-mamai/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-mamai')}>
 							Kalėdinis sveikinimas mamai
 						</FooterLink>
 
-						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-tevams/')}>
+						<FooterLink class="mb-4 text-white! hover:text-red-light!" href={resolvePath('/sveikinimai/kaledinis-sveikinimas-tevams')}>
 							Kalėdinis sveikinimas tėvams
 						</FooterLink>
 					</FooterLinkGroup>

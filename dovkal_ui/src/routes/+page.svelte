@@ -65,7 +65,7 @@
 		property="og:description"
 		content="Kalėdinis video sveikinimas vos per kelias minutes. Originali kalėdinė dovana vaikams, draugams ir kolegoms."
 	/>
-	<meta property="og:image" content="{SITE_URL}images/og-preview.jpg" />
+	<meta property="og:image" content="{SITE_URL}/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp" />
 	<meta property="og:image:alt" content="Kalėdų Senelis sveikina personalizuotame video sveikinime" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
@@ -76,15 +76,15 @@
 			"@type": "Product",
 			"name": "Kalėdų Senelio video sveikinimas",
 			"description": "Personalizuotas Kalėdų Senelio video sveikinimas pagal jūsų parašytą tekstą. Originali kalėdinė dovana vaikams, draugams ir kolegoms.",
-			"image": "https://kaledinissveikinimas.lt/images/og-preview.jpg",
+			"image": "https://kaledinissveikinimas.lt/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp",
 			"brand": {
 				"@type": "Brand",
 				"name": "KaledinisSveikinimas.lt"
 			},
-			"url": "https://kaledinissveikinimas.lt/",
+			"url": "https://kaledinissveikinimas.lt",
 			"offers": {
 				"@type": "Offer",
-				"url": "https://kaledinissveikinimas.lt/",
+				"url": "https://kaledinissveikinimas.lt",
 				"priceCurrency": "EUR",
 				"price": "8.99",
 				"availability": "https://schema.org/InStock"

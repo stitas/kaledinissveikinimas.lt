@@ -9,7 +9,7 @@
 	let { data }: { data: PageData } = $props();
 
 	const pages = $derived(data.pages);
-	const canonicalUrl = `${SITE_URL}sveikinimai/`;
+	const canonicalUrl = `${SITE_URL}/sveikinimai`;
 </script>
 
 <svelte:head>
@@ -58,7 +58,7 @@
 		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each pages as page (page.slug)}
 				<a
-					href={resolvePath(`/sveikinimai/${page.slug}/`)}
+					href={resolvePath(`/sveikinimai/${page.slug}`)}
 					class="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-red-light hover:shadow-lg"
 				>
 					<h2 class="text-xl font-bold tracking-tight text-gray-950 group-hover:text-red">

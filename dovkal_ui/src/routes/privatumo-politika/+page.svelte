@@ -1,21 +1,22 @@
 <script>
 	import Footer from "$lib/components/common/Footer.svelte";
-	import { SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/utils/constants';
+	import { SITE_NAME, SITE_URL, SUPPORT_EMAIL, SUPPORT_EMAIL_HREF } from '$lib/utils/constants';
 </script>
 
 <svelte:head>
-	<title>Privatumo politika | KaledinisSveikinimas.lt</title>
+	<title>Privatumo politika | {SITE_NAME}</title>
 	<meta
 		name="description"
-		content="KaledinisSveikinimas.lt privatumo politika: kokius duomenis renkame, kaip juos naudojame ir kaip galite prašyti juos ištrinti."
+		content="{SITE_NAME} privatumo politika: kokius duomenis renkame, kaip juos naudojame ir kaip galite prašyti juos ištrinti."
 	/>
 	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href={`${SITE_URL}/privatumo-politika`} />
 </svelte:head>
 
 <main class="bg-white">
 	<section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
 		<p class="mb-3 text-sm font-semibold tracking-wide text-red uppercase">
-			KaledinisSveikinimas.lt
+			{SITE_NAME}
 		</p>
 
 		<h1 class="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl">
@@ -31,7 +32,7 @@
 				<h2 class="text-xl font-bold text-gray-950">1. Bendra informacija</h2>
 
 				<p class="mt-3">
-					Ši privatumo politika paaiškina, kaip <strong>KaledinisSveikinimas.lt</strong>
+					Ši privatumo politika paaiškina, kaip <strong>{SITE_NAME}</strong>
 					tvarko asmens duomenis, kai naudojatės mūsų svetaine ir užsakote personalizuotą
 					Kalėdų Senelio video sveikinimą.
 				</p>

@@ -6,11 +6,10 @@
 	import type { PageData } from './$types';
 	import { SITE_NAME, SITE_URL } from '$lib/utils/constants';
 
-
 	let { data }: { data: PageData } = $props();
 
 	const page = $derived(data.page);
-	const canonicalUrl = $derived(`${SITE_URL}sveikinimai/${page.slug}/`);
+	const canonicalUrl = $derived(`${SITE_URL}/sveikinimai/${page.slug}`);
 
 	const primaryImage = '/images/kaledu-senelis/kaledu-senelis-savo-namuose.webp';
 	const secondaryImage = $derived(page.secondImage)
