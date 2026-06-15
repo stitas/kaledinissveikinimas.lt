@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<title>Kalėdinis sveikinimas | Kalėdų Senelio video sveikinimas nuo 8,99€</title>
+	<title>Kalėdinis sveikinimas | Kalėdų Senelio video nuo 8,99€</title>
 
 	<meta
 		name="description"
